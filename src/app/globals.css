@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — mirror the Figma variables of the "Cannaplace — Website" file
+ * (collections "Color" and "Radius", text styles on the Components page).
+ */
+@theme {
+  --color-page: #fcfbf8; /* bg/page */
+  --color-subtle: #f2f3ed; /* bg/subtle */
+  --color-card: #ffffff; /* bg/card */
+  --color-sage-100: #e4e9da; /* bg/sage */
+  --color-sage-200: #d3dcc4; /* bg/sage-strong */
+  --color-sage-300: #b8c4a6; /* brand/sage-light */
+  --color-sage-500: #7d8f69; /* brand/sage */
+  --color-kraft-100: #efe3d1; /* bg/kraft */
+  --color-kraft-400: #c9a57b; /* brand/kraft */
+  --color-kraft-700: #8a6238; /* text/accent */
+  --color-forest-700: #2e4230; /* brand/forest */
+  --color-forest-800: #2a3a2b; /* bg/inverse-raised */
+  --color-forest-900: #1f2b20; /* bg/inverse */
+  --color-ink: #1f2b20; /* text/primary */
+  --color-ink-muted: #5b6457; /* text/secondary */
+  --color-cream: #fcfbf8; /* text/inverse */
+  --color-cream-muted: #b4beab; /* text/inverse-muted */
+  --color-line: #e6e6de; /* border/default */
+  --color-line-strong: #d2d3c8; /* border/strong */
+  --color-line-inverse: #3a4b3b; /* border/inverse */
+  --color-star: #d4a23c; /* accent/star */
+  --color-success: #4f7a45; /* accent/success */
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  --shadow-card: 0 2px 6px rgb(31 43 32 / 0.04), 0 12px 32px rgb(31 43 32 / 0.07);
+  --shadow-float: 0 4px 12px rgb(31 43 32 / 0.06), 0 24px 56px rgb(31 43 32 / 0.14);
+
+  --font-sans: var(--body-family);
+  --font-heading: var(--heading-family);
+}
+
+/* Variant A (default): Jost everywhere. Variant B: Syne headings + DM Sans text. */
+:root {
+  --heading-family: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --body-family: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --heading-weight: 500;
+  --hs: 1;
+  --tr-display: -0.02em;
+  --tr-h2: -0.015em;
+  --tr-h3: -0.01em;
+  --tr-h4: -0.005em;
+  --accent-style: italic;
+}
+
+:root[data-font="syne"] {
+  --heading-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --body-family: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
+  --heading-weight: 700;
+  --hs: 0.96;
+  --tr-display: -0.035em;
+  --tr-h2: -0.025em;
+  --tr-h3: -0.02em;
+  --tr-h4: -0.015em;
+  --accent-style: normal;
+}
+
+@layer base {
+  html {
+    background: var(--color-page);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--body-family);
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  ::selection {
+    background: var(--color-sage-200);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sage-500);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .t-display,
+  .t-h2,
+  .t-h3,
+  .t-h4,
+  .t-logo {
+    font-family: var(--heading-family);
+    font-weight: var(--heading-weight);
+  }
+
+  .t-display {
+    font-size: calc(44px * var(--hs));
+    line-height: 1.06;
+    letter-spacing: var(--tr-display);
+  }
+
+  .t-h2 {
+    font-size: calc(32px * var(--hs));
+    line-height: 1.15;
+    letter-spacing: var(--tr-h2);
+  }
+
+  .t-h3 {
+    font-size: calc(24px * var(--hs));
+    line-height: 1.2;
+    letter-spacing: var(--tr-h3);
+  }
+
+  .t-h4 {
+    font-size: calc(20px * var(--hs));
+    line-height: 1.3;
+    letter-spacing: var(--tr-h4);
+  }
+
+  .t-logo {
+    font-size: calc(26px * var(--hs));
+    line-height: 28px;
+    letter-spacing: var(--tr-h3);
+  }
+
+  .t-accent {
+    font-style: var(--accent-style);
+  }
+
+  .t-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .t-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+  .t-label {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .t-price {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .t-body-lg {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .t-body-sm {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .t-caption {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 999px;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      box-shadow 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--color-forest-700);
+    color: var(--color-cream);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-forest-900);
+  }
+
+  .btn-secondary {
+    box-shadow: inset 0 0 0 1.5px var(--color-forest-700);
+    color: var(--color-ink);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-sage-100);
+  }
+
+  .btn-inverse {
+    background: var(--color-page);
+    color: var(--color-ink);
+  }
+
+  .btn-inverse:hover {
+    background: var(--color-sage-100);
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    transition:
+      background-color 0.2s,
+      transform 0.2s;
+  }
+
+  @media (min-width: 640px) {
+    .container-x {
+      padding-inline: 32px;
+    }
+
+    .t-display {
+      font-size: calc(60px * var(--hs));
+    }
+
+    .t-h2 {
+      font-size: calc(40px * var(--hs));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-x {
+      padding-inline: 80px;
+    }
+
+    .t-display {
+      font-size: calc(76px * var(--hs));
+      line-height: 1.05;
+    }
+
+    .t-h2 {
+      font-size: calc(48px * var(--hs));
+      line-height: 1.125;
+    }
+
+    .t-h3 {
+      font-size: calc(30px * var(--hs));
+    }
+
+    .t-h4 {
+      font-size: calc(22px * var(--hs));
+      line-height: 1.27;
+    }
+
+    .t-body-lg {
+      font-size: 19px;
+      line-height: 30px;
+    }
+  }
+}
