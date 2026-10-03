@@ -1,0 +1,6 @@
+:HL["/Cannaplace-1080/_next/static/chunks/34czb7l_gbeg2.css","style"]
+:HL["/Cannaplace-1080/_next/static/media/4917c4fe274b6773-s.p.0brp6yyop-3q2.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Cannaplace-1080/_next/static/media/5c285b27cdda1fe8-s.p.2_mbdogr7ni8i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Cannaplace-1080/_next/static/media/81cef6a21128489e-s.p.2csanl8cs02r-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Cannaplace-1080/_next/static/media/9f3a8f528b429e0d-s.p.28kl9fm_k8os3.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"en","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"3EGfXr9hJckfe4Wd4gmkx"}
