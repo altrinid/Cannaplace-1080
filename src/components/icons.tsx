@@ -4,6 +4,8 @@ const PATHS = {
   user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.2 3.6-6.5 8-6.5s8 2.3 8 6.5"/>',
   bag: '<path d="M5.5 8h13l-1 13h-11l-1-13z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
   "arrow-right": '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
+  "chevron-right": '<path d="M9.5 6l6 6-6 6"/>',
+  "chevron-down": '<path d="M6 9.5l6 6 6-6"/>',
   "map-pin": '<path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
   phone:
     '<path d="M6.5 3.5h3l1.6 4.4-2 1.3a11.5 11.5 0 0 0 5.7 5.7l1.3-2 4.4 1.6v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/>',
@@ -20,6 +22,7 @@ const PATHS = {
     '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"/>',
   leaf: '<path d="M4.5 19.5C4.5 10.5 10 4.5 19.5 4.5c0 9.5-6 15-15 15z"/><path d="M4.5 19.5l9-9"/>',
   "shield-check": '<path d="M12 3l7.5 2.8v5.7c0 4.8-3.2 8-7.5 9.5-4.3-1.5-7.5-4.7-7.5-9.5V5.8L12 3z"/><path d="M8.6 12l2.4 2.4 4.4-4.6"/>',
+  tram: '<rect x="6" y="4.5" width="12" height="12.5" rx="3"/><path d="M6 11h12"/><path d="M9.5 17l-2 3.5"/><path d="M14.5 17l2 3.5"/><path d="M10 2.5h4"/><path d="M12 2.5v2"/>',
   globe:
     '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   "file-text":

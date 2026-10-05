@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Dict } from "@/content/types";
 import { PRODUCT_IMAGES } from "@/lib/images";
 import { HempLeafLine } from "./hemp";
@@ -68,29 +69,32 @@ function HeroVisual({ t }: { t: Dict["hero"] }) {
   );
 }
 
-export function Hero({ t }: { t: Dict["hero"] }) {
+export function Hero({ t, shopHref, visitHref }: { t: Dict["hero"]; shopHref: string; visitHref: string }) {
   return (
     <section className="container-x grid items-center gap-12 pt-10 pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,600px)] lg:gap-16 lg:pt-12 lg:pb-[72px]">
       <div className="flex flex-col items-start gap-7">
-        <span className="t-eyebrow inline-flex items-center gap-2 rounded-full bg-sage-100 py-[7px] pr-3.5 pl-3 text-ink">
-          <Icon name="leaf" size={16} className="text-forest-700" />
-          {t.eyebrow}
-        </span>
-        <h1 className="t-display text-ink">
-          {t.titleLine1}
-          <br />
-          <span className="t-accent text-sage-500">{t.titleLine2}</span>
+        {/* The H1 carries the main keyword (eyebrow) and the brand line, visually unchanged. */}
+        <h1 className="flex flex-col items-start gap-7">
+          <span className="t-eyebrow inline-flex items-center gap-2 rounded-full bg-sage-100 py-[7px] pr-3.5 pl-3 text-ink">
+            <Icon name="leaf" size={16} className="text-forest-700" />
+            {t.eyebrow}
+          </span>
+          <span className="t-display text-ink">
+            {t.titleLine1}
+            <br />
+            <span className="t-accent text-sage-500">{t.titleLine2}</span>
+          </span>
         </h1>
         <p className="t-body-lg max-w-[616px] text-ink-muted">{t.lead}</p>
         <div className="flex flex-wrap gap-3">
-          <a href="#shop" className="btn btn-primary">
+          <Link href={shopHref} className="btn btn-primary">
             {t.ctaPrimary}
             <Icon name="arrow-right" size={18} />
-          </a>
-          <a href="#besuch" className="btn btn-secondary">
+          </Link>
+          <Link href={visitHref} className="btn btn-secondary">
             {t.ctaSecondary}
             <Icon name="map-pin" size={18} />
-          </a>
+          </Link>
         </div>
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-2 pt-2">
           <span className="inline-flex items-center gap-2">

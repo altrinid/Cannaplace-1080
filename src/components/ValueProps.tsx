@@ -9,7 +9,7 @@ export function ValueProps({ items }: { items: Dict["valueProps"] }) {
           <div key={item.title} className="flex gap-4">
             <IconCircle icon={item.icon} className="bg-card text-ink" />
             <div className="flex flex-col gap-1">
-              <h3 className="t-title text-ink">{item.title}</h3>
+              <p className="t-title text-ink">{item.title}</p>
               <p className="t-body-sm text-ink-muted">{item.text}</p>
             </div>
           </div>

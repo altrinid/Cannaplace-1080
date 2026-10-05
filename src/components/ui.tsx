@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Tone } from "@/content/types";
 import { Icon, type IconName } from "./icons";
@@ -15,7 +16,7 @@ export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?
 
 export function SectionHeading({ eyebrow, title, action }: { eyebrow: string; title: string; action?: ReactNode }) {
   return (
-    <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between">
       <div className="flex flex-col gap-3">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className="t-h2 text-ink">{title}</h2>
@@ -27,10 +28,10 @@ export function SectionHeading({ eyebrow, title, action }: { eyebrow: string; ti
 
 export function TextLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a href={href} className="group t-label inline-flex shrink-0 items-center gap-2 text-ink hover:text-forest-700">
+    <Link href={href} className="group t-label inline-flex shrink-0 items-center gap-2 text-ink hover:text-forest-700">
       {children}
       <Icon name="arrow-right" size={18} className="transition-transform group-hover:translate-x-0.5" />
-    </a>
+    </Link>
   );
 }
 
