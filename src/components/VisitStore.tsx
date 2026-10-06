@@ -2,12 +2,12 @@ import Image from "next/image";
 import type { Dict } from "@/content/types";
 import { MAP_IMAGE } from "@/lib/images";
 import { SHOP } from "@/lib/site";
-import { Icon, Stars } from "./icons";
-import { Eyebrow, IconCircle } from "./ui";
+import { Icon } from "./icons";
+import { Eyebrow, IconCircle, TextLink } from "./ui";
 
-export function VisitStore({ t }: { t: Dict["store"] }) {
+export function VisitStore({ t, city, contactHref }: { t: Dict["store"]; city: string; contactHref: string }) {
   const info = [
-    { icon: "map-pin" as const, content: `${SHOP.street}, ${t.city}` },
+    { icon: "map-pin" as const, content: `${SHOP.street}, ${city}` },
     { icon: "clock" as const, content: t.hours },
     {
       icon: "phone" as const,
@@ -39,15 +39,7 @@ export function VisitStore({ t }: { t: Dict["store"] }) {
             </li>
           ))}
         </ul>
-        <figure className="w-full rounded-md bg-subtle px-6 py-5">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <Stars size={16} />
-            <span className="t-label text-ink">{t.reviewSummary}</span>
-          </div>
-          <blockquote className="t-h4 t-accent mt-2.5 text-ink">{t.quote}</blockquote>
-          <figcaption className="t-caption mt-2.5 text-ink-muted">{t.quoteAuthor}</figcaption>
-        </figure>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <a href={SHOP.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {t.route}
             <Icon name="map-pin" size={18} />
@@ -56,6 +48,9 @@ export function VisitStore({ t }: { t: Dict["store"] }) {
             {t.call}
             <Icon name="phone" size={18} />
           </a>
+          <span className="px-2">
+            <TextLink href={contactHref}>{t.more}</TextLink>
+          </span>
         </div>
       </div>
     </section>

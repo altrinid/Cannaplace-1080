@@ -27,6 +27,7 @@
   --color-line-inverse: #3a4b3b; /* border/inverse */
   --color-star: #d4a23c; /* accent/star */
   --color-success: #4f7a45; /* accent/success */
+  --color-heart: #b5524a; /* saved on the wishlist */
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -82,6 +83,11 @@
 
   ::selection {
     background: var(--color-sage-200);
+  }
+
+  /* No page scrolling behind the search dialog. */
+  html:has(dialog[open]:modal) {
+    overflow: hidden;
   }
 
   :focus-visible {
@@ -224,6 +230,15 @@
 
   .btn-inverse:hover {
     background: var(--color-sage-100);
+  }
+
+  .btn-outline-inverse {
+    box-shadow: inset 0 0 0 1.5px var(--color-cream-muted);
+    color: var(--color-cream);
+  }
+
+  .btn-outline-inverse:hover {
+    background: var(--color-forest-800);
   }
 
   .icon-btn {
