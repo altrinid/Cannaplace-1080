@@ -18,6 +18,7 @@ import { JsonLd } from "../JsonLd";
 import { PageShell } from "../PageShell";
 import { ProductCard } from "../ProductCard";
 import { Badge, TONE_BG } from "../ui";
+import { WishlistButton } from "../WishlistButton";
 
 function relatedProducts(product: Product) {
   const sameCategory = productsIn(product.category).filter((p) => p.id !== product.id);
@@ -74,13 +75,25 @@ export function ProductPage({ lang, product }: { lang: Lang; product: Product })
             <span className="t-h3 text-ink">{formatPrice(lang, product.price)}</span>
             <span className="t-body-sm text-ink-muted">{t.product.inclVat}</span>
           </p>
+          {product.coa && (
+            <a
+              href="#laborbericht"
+              className="t-label inline-flex items-center gap-2 text-forest-700 underline decoration-sage-300 underline-offset-4 hover:decoration-forest-700"
+            >
+              <Icon name="flask" size={18} />
+              {t.product.coaLink} · {fill(t.coa.batch, { batch: product.coa.batch })}
+            </a>
+          )}
           {product.shipping ? (
             <>
               <p className="t-body-sm inline-flex items-center gap-2 text-ink">
                 <Icon name="package" size={18} className="text-sage-500" />
                 {t.product.shippingAvailable}
               </p>
-              <AddToCartButton label={t.product.addToCart} />
+              <div className="flex flex-wrap gap-3">
+                <AddToCartButton label={t.product.addToCart} />
+                <WishlistButton id={product.id} name={copy.name} label={t.product.wishlist} text={t.product.wishlistShort} />
+              </div>
             </>
           ) : (
             <div className="w-full rounded-md bg-kraft-100 p-5">
@@ -98,6 +111,7 @@ export function ProductPage({ lang, product }: { lang: Lang; product: Product })
                   {t.contactCta.call}
                   <Icon name="phone" size={18} />
                 </a>
+                <WishlistButton id={product.id} name={copy.name} label={t.product.wishlist} text={t.product.wishlistShort} />
               </div>
             </div>
           )}
@@ -131,14 +145,14 @@ export function ProductPage({ lang, product }: { lang: Lang; product: Product })
           </dl>
         </div>
         {product.coa && (
-          <aside className="flex flex-col gap-4">
+          <aside id="laborbericht" className="flex scroll-mt-28 flex-col gap-4">
             <h2 className="t-h3 text-ink">{t.product.coaTitle}</h2>
             <p className="text-ink-muted">{t.product.coaText}</p>
             <CoaCard
               lang={lang}
               name={copy.name}
               coa={product.coa}
-              link={{ href: infoPath(lang, "lab"), label: t.coa.viewAll }}
+              link={{ href: `${infoPath(lang, "lab")}#coa-${product.id}`, label: t.product.coaArchive }}
               className="mt-2"
             />
           </aside>

@@ -4,12 +4,15 @@ import { fill, formatMonth, formatPercent } from "@/lib/format";
 import { Icon } from "./icons";
 import { Badge, IconCircle, TextLink } from "./ui";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function CoaCard({
   lang,
   name,
   coa,
   link,
   flat = false,
+  id,
   className = "",
 }: {
   lang: Lang;
@@ -18,6 +21,8 @@ export function CoaCard({
   link?: { href: string; label: string };
   /** Bordered instead of floating, for grids of several certificates. */
   flat?: boolean;
+  /** Anchor for links from product pages, e.g. "coa-aromaoel-10". */
+  id?: string;
   className?: string;
 }) {
   const t = getDict(lang).coa;
@@ -31,6 +36,7 @@ export function CoaCard({
 
   return (
     <div
+      id={id}
       className={`w-full rounded-lg bg-card px-6 pt-7 pb-6 sm:px-8 ${flat ? "border border-line" : "shadow-float"} ${className}`}
     >
       <div className="flex items-center gap-3.5 pb-5">
@@ -63,6 +69,17 @@ export function CoaCard({
         </span>
         {link && <TextLink href={link.href}>{link.label}</TextLink>}
       </div>
+      {coa.pdf && (
+        <a
+          href={/^https?:/.test(coa.pdf) ? coa.pdf : `${BASE_PATH}${coa.pdf}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="t-label mt-4 inline-flex items-center gap-2 text-forest-700 hover:text-forest-900"
+        >
+          <Icon name="file-text" size={18} />
+          {t.pdf}
+        </a>
+      )}
     </div>
   );
 }

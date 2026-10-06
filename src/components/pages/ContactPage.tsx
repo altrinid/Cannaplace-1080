@@ -98,10 +98,16 @@ export function ContactPage({ lang }: { lang: Lang }) {
           <a href={SHOP.mapsUrl} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg">
             <Image src={MAP_IMAGE} alt={t.store.mapAlt} sizes="(min-width: 1024px) 616px, 100vw" className="h-auto w-full" />
           </a>
-          <div className="flex flex-wrap items-center gap-2.5 rounded-md bg-subtle px-6 py-5">
+          <a
+            href={SHOP.mapsSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-wrap items-center gap-2.5 rounded-md bg-subtle px-6 py-5 transition-colors hover:bg-sage-100"
+          >
             <Stars size={16} />
-            <span className="t-label text-ink">{t.store.reviewSummary}</span>
-          </div>
+            <span className="t-label text-ink">{t.intro.rating}</span>
+            <Icon name="arrow-right" size={18} className="ml-auto text-ink" />
+          </a>
           <div className="flex flex-wrap gap-3">
             <a href={SHOP.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               {t.store.route}

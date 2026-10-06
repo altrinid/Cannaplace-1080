@@ -17,6 +17,12 @@ import { PageShell } from "../PageShell";
 import { ProductCard } from "../ProductCard";
 import { RichText } from "../RichText";
 
+/** Three further articles: same topic first. */
+function moreArticles(entry: ArticleEntry) {
+  const others = ARTICLES.filter((other) => other.id !== entry.id);
+  return [...others.filter((other) => other.topic === entry.topic), ...others.filter((other) => other.topic !== entry.topic)].slice(0, 3);
+}
+
 export function ArticlePage({ lang, entry }: { lang: Lang; entry: ArticleEntry }) {
   const t = getDict(lang);
   const copy = getArticle(lang, entry.id);
@@ -132,7 +138,7 @@ export function ArticlePage({ lang, entry }: { lang: Lang; entry: ArticleEntry }
           </div>
           <div className="mt-10">
             <ArticleCards
-              articles={ARTICLES.filter((other) => other.id !== entry.id).map((other) => articleCard(lang, other))}
+              articles={moreArticles(entry).map((other) => articleCard(lang, other))}
               readMore={t.journal.readMore}
             />
           </div>

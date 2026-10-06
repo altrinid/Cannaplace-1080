@@ -17,7 +17,10 @@ export type ImageKey =
 export type Tone = "sage" | "sageStrong" | "kraft" | "subtle";
 export type CategoryKey = "flowers" | "oils" | "cosmetics" | "accessories";
 export type InfoPageKey = "lab" | "about" | "contact" | "shipping" | "faq" | "imprint" | "privacy" | "terms";
-export type ArticleId = "what-is-cbd" | "read-coa" | "cbd-law-austria";
+export type ArticleId = "what-is-cbd" | "read-coa" | "cbd-law-austria" | "spectrum" | "terpenes" | "storage";
+/** Topic groups on the guide index. */
+export type ArticleTopic = "basics" | "quality" | "law";
+export type SearchKind = "product" | "category" | "article" | "page";
 export type NavKey = "shop" | CategoryKey | "guide" | "about";
 
 export interface PageMeta {
@@ -64,6 +67,8 @@ export interface Coa {
   thc: number;
   /** ISO month of the analysis, e.g. "2026-09". */
   tested: string;
+  /** Path or URL of the full certificate (PDF), e.g. "/coa/CP-2410.pdf" in `public/`. */
+  pdf?: string;
 }
 
 export interface Product {
@@ -101,6 +106,12 @@ export interface ArticleCopy {
   faq: Faq[];
 }
 
+export interface GlossaryTerm {
+  term: string;
+  /** Supports inline links and bold like Block text. */
+  text: string;
+}
+
 export interface InfoPageCopy {
   slug: string;
   /** Short name for breadcrumbs and footer links. */
@@ -134,20 +145,36 @@ export interface Dict {
     openMenu: string;
     closeMenu: string;
     language: string;
+    wishlist: string;
+    accountTitle: string;
+    accountText: string;
+    searchPanel: {
+      title: string;
+      placeholder: string;
+      close: string;
+      /** `{q}` is the query. */
+      empty: string;
+      popular: string;
+      results: Plural;
+      suggestions: string[];
+      groups: Record<SearchKind, string>;
+    };
   };
-  hero: {
+  /** Compact intro above the promo banners; carries the H1. */
+  intro: {
     eyebrow: string;
-    titleLine1: string;
-    titleLine2: string;
-    lead: string;
-    ctaPrimary: string;
-    ctaSecondary: string;
+    title: string;
     rating: string;
     thc: string;
-    floatLabTitle: string;
-    floatLabText: string;
-    floatRatingText: string;
-    imageAlt: string;
+  };
+  promo: {
+    label: string;
+    /** `{n}` and `{total}`. */
+    slide: string;
+    prev: string;
+    next: string;
+    pause: string;
+    play: string;
   };
   valueProps: { icon: IconName; title: string; text: string }[];
   categories: { eyebrow: string; title: string; link: string };
@@ -165,13 +192,24 @@ export interface Dict {
     title: string;
     text: string;
     hours: string;
-    reviewSummary: string;
-    quote: string;
-    quoteAuthor: string;
     route: string;
     call: string;
     more: string;
     mapAlt: string;
+  };
+  reviews: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    /** `{count}` reviews. */
+    summary: string;
+    all: string;
+    source: Record<"google" | "shop", string>;
+    /** Note under translated reviews. */
+    translated: string;
+    inviteTitle: string;
+    inviteText: string;
+    inviteCta: string;
   };
   journal: { eyebrow: string; title: string; link: string; readMore: string };
   homeSeo: { eyebrow: string; title: string; body: Block[]; faqTitle: string; faq: Faq[] };
@@ -193,6 +231,14 @@ export interface Dict {
     hoursShort: string;
     copyright: string;
     legal: string;
+    withdrawal: string;
+    /** Anchor of the returns section on the shipping page. */
+    withdrawalHash: string;
+    operator: string;
+    register: string;
+    vat: string;
+    /** Text before the agency logo, e.g. "Website & SEO:". */
+    credit: string;
   };
   common: {
     home: string;
@@ -213,6 +259,7 @@ export interface Dict {
     meta: { title: string; titleInStore: string; lab: string; description: string };
     addToCart: string;
     wishlist: string;
+    wishlistShort: string;
     inclVat: string;
     badges: { bestseller: string; new: string };
     shippingAvailable: string;
@@ -223,6 +270,8 @@ export interface Dict {
     specsTitle: string;
     coaTitle: string;
     coaText: string;
+    coaLink: string;
+    coaArchive: string;
     faqTitle: string;
     /** FAQ masks with `{name}` and `{category}` placeholders; the second set is used for in-store-only products. */
     faqShipping: Faq[];
@@ -241,9 +290,9 @@ export interface Dict {
     notDetected: string;
     footer: string;
     tested: string;
-    viewAll: string;
     currentBatches: string;
     toProduct: string;
+    pdf: string;
   };
   article: {
     toc: string;
@@ -265,7 +314,37 @@ export interface Dict {
     faq: Faq[];
   };
   categoryPages: Record<CategoryKey, CategoryCopy>;
-  guide: { meta: PageMeta; eyebrow: string; h1: string; intro: string };
+  guide: {
+    meta: PageMeta;
+    eyebrow: string;
+    h1: string;
+    intro: string;
+    topics: Record<ArticleTopic, { title: string; text: string }>;
+    glossaryTeaser: { eyebrow: string; title: string; text: string; link: string };
+  };
+  glossary: {
+    slug: string;
+    label: string;
+    eyebrow: string;
+    title: string;
+    meta: PageMeta;
+    lead: string;
+    jump: string;
+    terms: GlossaryTerm[];
+  };
+  wishlist: {
+    slug: string;
+    label: string;
+    eyebrow: string;
+    title: string;
+    meta: PageMeta;
+    lead: string;
+    emptyTitle: string;
+    emptyText: string;
+    emptyCta: string;
+    clear: string;
+    note: string;
+  };
   pages: Record<InfoPageKey, InfoPageCopy>;
   contact: {
     city: string;

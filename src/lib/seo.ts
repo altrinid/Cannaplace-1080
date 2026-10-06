@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDict } from "@/content";
-import type { Faq, Lang, PageMeta, Product } from "@/content/types";
+import type { Faq, GlossaryTerm, Lang, PageMeta, Product } from "@/content/types";
+import { plainText, slugify } from "./format";
 import { homePath, infoPath } from "./routes";
 import { INDEXABLE, SHOP, SITE_URL } from "./site";
 
@@ -183,5 +184,27 @@ export function articleJsonLd(
     image: OG_IMAGE.url,
     author: { "@type": "Organization", name: t.article.author, url: absoluteUrl(infoPath(lang, "about")) },
     publisher: { "@type": "Organization", name: SHOP.name, url: absoluteUrl(homePath(lang)) },
+  };
+}
+
+export function glossaryJsonLd(lang: Lang, terms: GlossaryTerm[], path: string) {
+  const t = getDict(lang);
+  const url = absoluteUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": `${url}#glossary`,
+    name: t.glossary.title,
+    description: t.glossary.meta.description,
+    url,
+    inLanguage: t.locale,
+    hasDefinedTerm: terms.map((term) => ({
+      "@type": "DefinedTerm",
+      "@id": `${url}#${slugify(term.term)}`,
+      name: term.term,
+      description: plainText(term.text),
+      url: `${url}#${slugify(term.term)}`,
+      inDefinedTermSet: `${url}#glossary`,
+    })),
   };
 }

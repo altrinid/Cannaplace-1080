@@ -24,6 +24,25 @@ export const SHOP = {
   ],
 } as const;
 
+// Operator as listed in the Austrian company register (Firmenbuch) — confirm with the shop before launch (see README).
+// Optional fields stay hidden in the footer until they are filled in.
+export const COMPANY: {
+  name: string;
+  register: string;
+  court: string;
+  vatId: string | null;
+  email: string | null;
+} = {
+  name: "CANNAPLACE OG",
+  register: "FN 619212g",
+  court: "Handelsgericht Wien",
+  vatId: null,
+  email: null,
+};
+
+// Agency credit in the footer and the imprint.
+export const AGENCY = { name: "Getflowly", url: "https://getflowly.at" } as const;
+
 // Absolute origin + base path of the deployed site, used for canonical, hreflang, sitemap and JSON-LD URLs.
 // Set NEXT_PUBLIC_SITE_URL to the shop's own domain for the live site; without it the build is a preview.
 export const SITE_URL = (
@@ -36,4 +55,5 @@ export const INDEXABLE = Boolean(process.env.NEXT_PUBLIC_SITE_URL);
 export const STORAGE_KEYS = {
   ageConfirmed: "cp-age-confirmed",
   font: "cp-font",
+  wishlist: "cp-wishlist",
 } as const;

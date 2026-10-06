@@ -86,26 +86,32 @@ Masks (in `src/content/de.ts` → `product.meta` and `product.faq*`):
 
 ## 4. Content plan (`[SEO] Контент-план`)
 
-Published (October 2026), each about 8,000–10,000 characters with a product block, FAQ, author and date:
+Published (October 2026), each with a product block, FAQ, author and date, grouped by topic on `/ratgeber/`:
 
-1. Was ist CBD? Die wichtigsten Grundlagen — `/ratgeber/was-ist-cbd/`
-2. So liest du ein Analysezertifikat richtig — `/ratgeber/analysezertifikat-lesen/`
-3. CBD in Österreich: Was ist erlaubt? — `/ratgeber/cbd-legal-oesterreich/`
+| Topic | Article | URL |
+| --- | --- | --- |
+| Grundlagen | Was ist CBD? Die wichtigsten Grundlagen | `/ratgeber/was-ist-cbd/` |
+| Grundlagen | Vollspektrum, Breitspektrum oder Isolat? Die Unterschiede | `/ratgeber/vollspektrum-breitspektrum-isolat/` |
+| Grundlagen | Terpene erklärt: Was Hanf seinen Duft verleiht | `/ratgeber/terpene/` |
+| Qualität & Lagerung | So liest du ein Analysezertifikat richtig | `/ratgeber/analysezertifikat-lesen/` |
+| Qualität & Lagerung | CBD richtig lagern: Öl, Blüten und Kosmetik | `/ratgeber/cbd-lagern/` |
+| Recht in Österreich | CBD in Österreich: Was ist erlaubt? | `/ratgeber/cbd-legal-oesterreich/` |
+
+Plus the **CBD-Lexikon** (`/ratgeber/lexikon/`, `/en/guide/glossary/`): 24 terms with anchors, `DefinedTermSet` structured data and links into the articles and categories. The header search also finds every term.
 
 Next topics in priority order. Before writing, check demand in Keyword Planner and the competitors' ranking articles, as the playbook describes.
 
 | # | Topic | Target query | Links to |
 | --- | --- | --- | --- |
 | 1 | CBD Öl 5 %, 10 % oder 20 % – welche Konzentration? | cbd öl 10 oder 20 prozent | CBD Öle |
-| 2 | Vollspektrum, Breitspektrum, Isolat im Vergleich | vollspektrum cbd öl | CBD Öle |
-| 3 | CBD-Blüten: Trafik oder Fachgeschäft – was ab 2029 gilt | cbd blüten trafik | CBD Blüten |
-| 4 | CBD und Autofahren in Österreich | cbd autofahren österreich | Ratgeber Recht |
-| 5 | Terpene erklärt: Was das Aroma über eine Sorte verrät | terpene cbd blüten | CBD Blüten |
-| 6 | CBG, CBN & Co.: weitere Cannabinoide | was ist cbg | CBD Öle |
-| 7 | CBD-Kosmetik: was erlaubt ist und worauf du achten solltest | cbd kosmetik erfahrungen | Kosmetik |
-| 8 | CBD Öl richtig lagern – Haltbarkeit und Tipps | cbd öl haltbarkeit | CBD Öle |
-| 9 | Grinder reinigen: Schritt für Schritt | grinder reinigen | Zubehör |
-| 10 | Hanf, Cannabis, Marihuana – wo ist der Unterschied? | unterschied hanf cannabis | Ratgeber Grundlagen |
+| 2 | CBD-Blüten: Trafik oder Fachgeschäft – was ab 2029 gilt | cbd blüten trafik | CBD Blüten |
+| 3 | CBD und Autofahren in Österreich | cbd autofahren österreich | Ratgeber Recht |
+| 4 | CBG, CBN & Co.: weitere Cannabinoide | was ist cbg | CBD Öle |
+| 5 | CBD-Kosmetik: was erlaubt ist und worauf du achten solltest | cbd kosmetik erfahrungen | Kosmetik |
+| 6 | Grinder reinigen: Schritt für Schritt | grinder reinigen | Zubehör |
+| 7 | Hanf, Cannabis, Marihuana – wo ist der Unterschied? | unterschied hanf cannabis | Ratgeber Grundlagen |
+
+New articles go into `src/content/articles/de.ts` and `en.ts` (copy) and `src/content/articles/index.ts` (topic, image, dates, linked products). `FEATURED_ARTICLE_IDS` there decides which three appear on the home page.
 
 ## 5. After launch (`[SEO] Контентный аудит`)
 
@@ -113,6 +119,31 @@ Next topics in priority order. Before writing, check demand in Keyword Planner a
 2. Verify the domain in Google Search Console and Bing Webmaster Tools and submit `/sitemap.xml`.
 3. Track positions for the keyword map (for example with Sistrix, Ahrefs or Search Console). Pages outside the top 10 get text work in this order: no text → low uniqueness → keyword stuffing → outdated (more than 6 months old). Pages in the top 10 stay as they are.
 4. Make the Google Business Profile match the website exactly (name, address, phone, hours, categories "CBD-Geschäft" and "Hanfladen", photos, posts). Answer every review.
+
+## 6. Website audit (October 2026)
+
+| # | Audit point | Implemented as |
+| --- | --- | --- |
+| 1 | Header: search, account, favorites, cart | Working search (products, categories, guide, glossary terms, pages; umlaut-tolerant), account menu (log-in follows with the shop backend), **Merkliste** with counter, cart. On phones: search, Merkliste, cart and menu next to a compact logo. |
+| 2 | Banner block instead of the hero | `HomeIntro`: one line with the H1 and trust signals, a banner slider (about a third of the screen: 360 px on desktop, 244 px on phones) and two fixed tiles. The next sections stay visible. |
+| 3 | Keep categories and bestsellers | unchanged, directly below the banner and the trust bar |
+| 4 | Lab reports, later linked to products | Product page: "Laborbericht ansehen" jumps to the report on the page; the report links to its card in the archive (`/laborberichte/#coa-{id}`, highlighted). Add `pdf` to a product's `coa` to offer the full certificate. |
+| 5 | Customer reviews on the home page | `Reviews` section: Google rating with link to the profile, review cards from `src/content/reviews.ts`, invitation to review. Only real reviews; no review markup for own reviews. |
+| 6 | Knowledge base / Ratgeber | Six articles in three topics, the glossary, and three featured articles on the home page |
+| 7 | Footer with company data and credit | Operator line (company, register number, court, VAT ID once set), legal links incl. right of withdrawal, contact, "Website & SEO: Getflowly" with logo |
+
+### Banner
+
+Banners live in `src/content/banners.ts` — one entry per banner with German and English copy, link target, one to three product illustrations and a colour theme (`sage`, `kraft`, `forest`). Optional `from` / `until` dates limit a banner to a period (e.g. a seasonal campaign); the window is applied at build time, so a deploy is needed when a period starts or ends. The layout does not change with the content.
+
+- Title up to ~40 characters, text up to ~110, button up to ~22.
+- The first banner is the one search engines and visitors without JavaScript see.
+- **No CBD flowers in banners:** hemp flowers fall under the tobacco monopoly, and tobacco advertising is restricted (TNRSG).
+- No health claims and no struck-through prices without a real previous price (Omnibus Directive, Austrian price labelling rules).
+
+### Reviews
+
+Add reviews to `src/content/reviews.ts` exactly as they appear on Google (short name, stars, text; translation optional). With a review tool or shop backend later, on-site reviews can be added as `source: "shop"`. Don't add `AggregateRating` markup for the shop's own reviews — Google ignores self-serving review snippets for local businesses.
 
 ## Adaptations for Google and Austria
 
@@ -129,6 +160,8 @@ Next topics in priority order. Before writing, check demand in Keyword Planner a
 ## Open items for the shop
 
 - **CBD flowers:** since the VwGH ruling of January 2025 and the Abgabenänderungsgesetz 2025, hemp flowers fall under the tobacco monopoly. Hemp shops may sell them until the end of 2028 only with a transitional licence from the Monopolverwaltung GmbH, and mail order is prohibited. The site therefore shows flowers as *in store only*, with no cart and no shipping. Please confirm the licence, and have a lawyer check whether presenting flowers online is affected by the tobacco advertising rules (TNRSG).
-- **Legal pages:** company name, VAT ID, register number, trade authority and email for the imprint; a reviewed privacy policy (shop, newsletter, payment provider); terms and conditions.
+- **Legal pages:** the imprint shows **CANNAPLACE OG, FN 619212g, Handelsgericht Wien** from the public company register — please confirm that this is the operator. Still missing: VAT ID, email, trade authority, a reviewed privacy policy (shop, newsletter, payment provider) and the terms and conditions. VAT ID and email also appear in the footer once they are set in `COMPANY` (`src/lib/site.ts`).
+- **Reviews:** more real Google reviews for `src/content/reviews.ts` (with the authors' short names as published).
+- **Lab reports:** PDFs of the certificates (`public/coa/…`) to link from each product.
 - **Data to confirm:** real products, prices, photos and lab values, opening hours, shipping costs, payment methods, and the production domain.
 - **E-E-A-T:** names and photos of the team for articles and the About page.

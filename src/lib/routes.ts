@@ -15,6 +15,9 @@ export const productPath = (lang: Lang, product: Product) =>
   `${categoryPath(lang, product.category)}${product[lang].slug}/`;
 export const guidePath = (lang: Lang) => `${ROOT[lang]}${GUIDE[lang]}/`;
 export const articlePath = (lang: Lang, id: ArticleId) => `${guidePath(lang)}${getArticle(lang, id).slug}/`;
+export const glossaryPath = (lang: Lang) => `${guidePath(lang)}${getDict(lang).glossary.slug}/`;
+/** Personal page (noindex, not in the sitemap). */
+export const wishlistPath = (lang: Lang) => `${ROOT[lang]}${getDict(lang).wishlist.slug}/`;
 export const infoPath = (lang: Lang, key: InfoPageKey) => `${ROOT[lang]}${getDict(lang).pages[key].slug}/`;
 
 export function navItems(lang: Lang): { key: NavKey; label: string; href: string }[] {
@@ -49,6 +52,7 @@ export function allPages(): PagePair[] {
     ...CATEGORIES.map(({ key }) => pair((lang) => categoryPath(lang, key))),
     ...PRODUCTS.map((product) => pair((lang) => productPath(lang, product))),
     pair(guidePath),
+    pair(glossaryPath),
     ...ARTICLES.map((article) => pair((lang) => articlePath(lang, article.id), article.updated)),
     ...INFO_PAGES.filter((key) => !getDict("de").pages[key].noindex).map((key) =>
       pair((lang) => infoPath(lang, key)),

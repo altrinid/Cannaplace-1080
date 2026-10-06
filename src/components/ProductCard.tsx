@@ -7,6 +7,7 @@ import { PRODUCT_IMAGES } from "@/lib/images";
 import { useCart } from "./CartProvider";
 import { Icon } from "./icons";
 import { Badge, TONE_BG } from "./ui";
+import { WishlistButton } from "./WishlistButton";
 
 /** Localized, serializable product data for cards (keeps the full catalog out of the client bundle). */
 export interface CardProduct {
@@ -56,13 +57,12 @@ export function ProductCard({
             <Badge tone={product.badge.tone}>{product.badge.label}</Badge>
           </span>
         )}
-        <button
-          type="button"
-          aria-label={`${labels.wishlist}: ${product.name}`}
-          className="icon-btn absolute top-3 right-3 z-10 h-[38px] w-[38px] bg-card text-ink hover:bg-sage-100"
-        >
-          <Icon name="heart" size={20} />
-        </button>
+        <WishlistButton
+          id={product.id}
+          name={product.name}
+          label={labels.wishlist}
+          className="absolute top-3 right-3 z-10 h-[38px] w-[38px]"
+        />
       </div>
       <div className="flex flex-1 flex-col gap-1.5 px-2.5 pt-4 pb-2">
         <p className="t-eyebrow text-kraft-700">{product.meta}</p>

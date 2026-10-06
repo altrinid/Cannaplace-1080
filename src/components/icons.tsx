@@ -31,6 +31,10 @@ const PATHS = {
   menu: '<path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>',
   mail: '<rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/>',
   close: '<path d="M6 6l12 12"/><path d="M18 6L6 18"/>',
+  "chevron-left": '<path d="M14.5 6l-6 6 6 6"/>',
+  pause: '<path d="M9 6v12"/><path d="M15 6v12"/>',
+  play: '<path d="M8 5.5v13l10.5-6.5L8 5.5z"/>',
+  trash: '<path d="M4.5 7h15"/><path d="M9.5 7V4.5h5V7"/><path d="M6.5 7l1 13h9l1-13"/>',
 } as const;
 
 export type IconName = keyof typeof PATHS;
@@ -39,11 +43,14 @@ export function Icon({
   name,
   size = 24,
   strokeWidth = 1.6,
+  filled = false,
   className,
 }: {
   name: IconName;
   size?: number;
   strokeWidth?: number;
+  /** Fills the outline shape, e.g. the heart of a saved product. */
+  filled?: boolean;
   className?: string;
 }) {
   return (
@@ -51,7 +58,7 @@ export function Icon({
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
+      fill={filled ? "currentColor" : "none"}
       stroke="currentColor"
       strokeWidth={strokeWidth}
       strokeLinecap="round"

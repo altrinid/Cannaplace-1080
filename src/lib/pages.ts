@@ -3,7 +3,17 @@ import { CATEGORIES, PRODUCTS } from "@/content/catalog";
 import { getDict, otherLang } from "@/content";
 import type { CategoryKey, InfoPageKey, Lang, Product } from "@/content/types";
 import { fill } from "./format";
-import { articlePath, categoryPath, guidePath, homePath, infoPath, productPath, shopPath } from "./routes";
+import {
+  articlePath,
+  categoryPath,
+  glossaryPath,
+  guidePath,
+  homePath,
+  infoPath,
+  productPath,
+  shopPath,
+  wishlistPath,
+} from "./routes";
 import { pageMetadata } from "./seo";
 
 // Metadata and static params for the route files of both languages.
@@ -44,6 +54,23 @@ export const productMetadata = (lang: Lang, product: Product) => {
 
 export const guideMetadata = (lang: Lang) =>
   pageMetadata({ lang, path: guidePath(lang), alternate: guidePath(otherLang(lang)), meta: getDict(lang).guide.meta });
+
+export const glossaryMetadata = (lang: Lang) =>
+  pageMetadata({
+    lang,
+    path: glossaryPath(lang),
+    alternate: glossaryPath(otherLang(lang)),
+    meta: getDict(lang).glossary.meta,
+  });
+
+export const wishlistMetadata = (lang: Lang) =>
+  pageMetadata({
+    lang,
+    path: wishlistPath(lang),
+    alternate: wishlistPath(otherLang(lang)),
+    meta: getDict(lang).wishlist.meta,
+    noindex: true,
+  });
 
 export const articleMetadata = (lang: Lang, entry: ArticleEntry) =>
   pageMetadata({

@@ -3,6 +3,7 @@ import { getDict } from "@/content";
 import type { Lang } from "@/content/types";
 import { productPath } from "@/lib/routes";
 import { CoaCard } from "../CoaCard";
+import { HashTarget } from "../HashTarget";
 import { InfoPage } from "./InfoPage";
 
 export function LabReportsPage({ lang }: { lang: Lang }) {
@@ -21,12 +22,15 @@ export function LabReportsPage({ lang }: { lang: Lang }) {
                     name={product[lang].name}
                     coa={product.coa}
                     link={{ href: productPath(lang, product), label: t.coa.toProduct }}
+                    id={`coa-${product.id}`}
+                    className="scroll-mt-28 transition-shadow data-[hash-target]:ring-2 data-[hash-target]:ring-sage-500"
                     flat
                   />,
                 ]
               : [],
           )}
         </div>
+        <HashTarget />
       </section>
     </InfoPage>
   );

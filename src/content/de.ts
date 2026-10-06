@@ -33,20 +33,34 @@ export const de: Dict = {
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
     language: "Sprache",
+    wishlist: "Merkliste",
+    accountTitle: "Kundenkonto",
+    accountText:
+      "Login und Bestellübersicht kommen mit dem Start des Onlineshops. Deine Merkliste funktioniert schon jetzt – gespeichert in deinem Browser.",
+    searchPanel: {
+      title: "Shop durchsuchen",
+      placeholder: "Produkte, Ratgeber, Themen …",
+      close: "Suche schließen",
+      empty: "Keine Treffer für „{q}“. Versuch es mit einem anderen Begriff – oder ruf uns an, wir helfen gerne weiter.",
+      popular: "Beliebte Suchen",
+      results: { one: "{n} Treffer", other: "{n} Treffer" },
+      suggestions: ["CBD Öl", "Kosmetik", "Grinder", "Laborbericht", "Versand", "Terpene"],
+      groups: { product: "Produkte", category: "Kategorien", article: "Ratgeber", page: "Seiten" },
+    },
   },
-  hero: {
+  intro: {
     eyebrow: "CBD Shop in Wien-Josefstadt",
-    titleLine1: "Hanf, wie er",
-    titleLine2: "sein sollte.",
-    lead: "Hochwertige CBD-Blüten, Öle und Kosmetik – laborgeprüft, fair bepreist und persönlich beraten. Online bestellen oder in der Josefstädter Straße 56 vorbeikommen.",
-    ctaPrimary: "Zum Shop",
-    ctaSecondary: "Shop besuchen",
+    title: "Hanf, wie er sein sollte.",
     rating: "5,0 · 127 Google-Bewertungen",
     thc: "THC < 0,3 % · laborgeprüft",
-    floatLabTitle: "Laborgeprüft",
-    floatLabText: "Analysezertifikat zu jedem Produkt",
-    floatRatingText: "127 Bewertungen auf Google",
-    imageAlt: "CBD Aromaöl und CBD Blüten von Cannaplace",
+  },
+  promo: {
+    label: "Aktionen und Empfehlungen",
+    slide: "Banner {n} von {total}",
+    prev: "Vorheriges Banner",
+    next: "Nächstes Banner",
+    pause: "Automatischen Wechsel anhalten",
+    play: "Automatischen Wechsel starten",
   },
   valueProps: [
     { icon: "flask", title: "Laborgeprüft", text: "Jede Charge mit Analysezertifikat eines unabhängigen Labors." },
@@ -73,15 +87,25 @@ export const de: Dict = {
     title: "Mitten in der Josefstadt",
     text: "Komm vorbei, schnupper rein und lass dich beraten. In unserem Shop findest du das komplette Sortiment – und ehrliche Empfehlungen statt Verkaufsgespräche.",
     hours: "Mo–Fr 10:30–19:00 · Sa 11:00–17:00",
-    reviewSummary: "5,0 · 127 Bewertungen auf Google",
-    quote: "„Top Auswahl und gute Beratung.“",
-    quoteAuthor: "Filippo P. · Google-Bewertung",
     route: "Route planen",
     call: "Anrufen",
     more: "Kontakt & Anfahrt",
     mapAlt: "Karte: Cannaplace in der Josefstädter Straße 56, 1080 Wien",
   },
-  journal: { eyebrow: "Ratgeber", title: "Wissen rund um CBD", link: "Alle Artikel", readMore: "Weiterlesen" },
+  reviews: {
+    eyebrow: "Bewertungen",
+    title: "Das sagen unsere Kundinnen und Kunden",
+    text: "Ehrliche Beratung und geprüfte Qualität – davon erzählen die Bewertungen auf unserem Google-Profil.",
+    summary: "{count} Bewertungen auf Google",
+    all: "Alle Bewertungen auf Google",
+    source: { google: "Google-Bewertung", shop: "Bewertung im Shop" },
+    translated: "Aus dem Englischen übersetzt",
+    inviteTitle: "Schon bei uns gewesen?",
+    inviteText:
+      "Erzähl anderen von deinem Besuch: Deine Bewertung auf Google hilft uns – und allen, die in Wien einen ehrlichen CBD Shop suchen.",
+    inviteCta: "Bewertung schreiben",
+  },
+  journal: { eyebrow: "Ratgeber", title: "Wissen rund um CBD", link: "Zum Ratgeber", readMore: "Weiterlesen" },
   homeSeo: {
     eyebrow: "CBD Shop Wien",
     title: "Dein CBD Shop in Wien-Josefstadt",
@@ -142,6 +166,12 @@ export const de: Dict = {
     hoursShort: "Mo–Fr 10:30–19:00 · Sa 11:00–17:00",
     copyright: "© 2026 Cannaplace 1080 CBD Shop. Alle Rechte vorbehalten.",
     legal: "Verkauf nur an Personen ab 18 Jahren · Alle Produkte mit THC < 0,3 % · Keine Arzneimittel",
+    withdrawal: "Widerrufsrecht",
+    withdrawalHash: "rueckgabe-widerruf",
+    operator: "Betreiberin",
+    register: "Firmenbuch",
+    vat: "UID",
+    credit: "Website & SEO:",
   },
   common: {
     home: "Startseite",
@@ -166,6 +196,7 @@ export const de: Dict = {
     },
     addToCart: "In den Warenkorb",
     wishlist: "Auf die Merkliste",
+    wishlistShort: "Merken",
     inclVat: "inkl. 20 % MwSt.",
     badges: { bestseller: "Bestseller", new: "Neu" },
     shippingAvailable: "Versand in ganz Österreich oder Abholung im Shop",
@@ -182,6 +213,8 @@ export const de: Dict = {
     coaTitle: "Laborbericht",
     coaText:
       "Die wichtigsten Werte der aktuellen Charge. Das vollständige Zertifikat zeigen wir dir gerne im Shop oder schicken es dir auf Anfrage.",
+    coaLink: "Laborbericht ansehen",
+    coaArchive: "Im Laborarchiv ansehen",
     faqTitle: "Häufige Fragen zu {name}",
     faqShipping: [
       {
@@ -219,9 +252,9 @@ export const de: Dict = {
     notDetected: "nicht nachweisbar",
     footer: "Unabhängiges Labor · ISO/IEC 17025",
     tested: "Analyse {date}",
-    viewAll: "Alle Laborberichte",
     currentBatches: "Aktuelle Chargen",
     toProduct: "Zum Produkt",
+    pdf: "Vollständiges Zertifikat (PDF)",
   },
   article: {
     toc: "Inhalt",
@@ -507,14 +540,162 @@ export const de: Dict = {
   },
   guide: {
     meta: {
-      title: "CBD Ratgeber: Grundlagen, Laborberichte & Recht | Cannaplace",
+      title: "CBD Ratgeber: Grundlagen, Qualität & Recht | Cannaplace",
       description:
-        "Verständlich erklärt: was CBD ist, wie du ein Analysezertifikat liest und was in Österreich erlaubt ist – der CBD Ratgeber von Cannaplace 1080 aus Wien.",
+        "CBD Ratgeber aus Wien: Grundlagen, Vollspektrum vs. Isolat, Terpene, Laborberichte, Lagerung und Rechtslage in Österreich – plus CBD-Lexikon von A bis Z.",
     },
     eyebrow: "Ratgeber",
     h1: "CBD Ratgeber: Wissen rund um CBD",
     intro:
-      "Ehrlich, verständlich und ohne Heilversprechen: In unserem Ratgeber erklären wir die wichtigsten Grundlagen zu CBD, zur Qualität und zur Rechtslage in Österreich.",
+      "Ehrlich, verständlich und ohne Heilversprechen: Hier erklären wir die Grundlagen zu CBD, zur Qualität und zur Rechtslage in Österreich – und im Lexikon die wichtigsten Begriffe von A bis Z.",
+    topics: {
+      basics: {
+        title: "Grundlagen",
+        text: "Was CBD ist, wie sich Extrakte unterscheiden und was Terpene mit dem Aroma zu tun haben.",
+      },
+      quality: {
+        title: "Qualität & Lagerung",
+        text: "Laborberichte verstehen und CBD-Produkte so lagern, dass sie lange gut bleiben.",
+      },
+      law: {
+        title: "Recht in Österreich",
+        text: "THC-Grenzwert, Aromaöl, Kosmetik und das Tabakmonopol für Hanfblüten.",
+      },
+    },
+    glossaryTeaser: {
+      eyebrow: "Lexikon",
+      title: "CBD-Lexikon: Begriffe von A bis Z",
+      text: "Von Analysezertifikat bis Vollspektrum – die wichtigsten Begriffe rund um CBD kurz erklärt.",
+      link: "Zum Lexikon",
+    },
+  },
+  glossary: {
+    slug: "lexikon",
+    label: "Lexikon",
+    eyebrow: "Ratgeber",
+    title: "CBD-Lexikon: Begriffe von A bis Z",
+    meta: {
+      title: "CBD-Lexikon: Begriffe rund um CBD erklärt | Cannaplace",
+      description:
+        "Analysezertifikat, Breitspektrum, CBG, Terpene, Tabakmonopol: Das CBD-Lexikon von Cannaplace 1080 erklärt die wichtigsten Begriffe rund um CBD kurz und verständlich.",
+    },
+    lead: "Die wichtigsten Begriffe rund um CBD, Qualität und Rechtslage in Österreich – kurz, verständlich und ohne Heilversprechen erklärt.",
+    jump: "Springe zu Buchstabe",
+    terms: [
+      {
+        term: "Analysezertifikat (COA)",
+        text: "Prüfbericht eines Labors zu einer bestimmten Charge (Certificate of Analysis). Er dokumentiert das Cannabinoid-Profil, etwa CBD- und THC-Gehalt, und meist auch Prüfungen auf Pestizide, Schwermetalle und Lösungsmittel. Schritt für Schritt erklärt: [Analysezertifikat lesen](/ratgeber/analysezertifikat-lesen/).",
+      },
+      {
+        term: "Aromaöl",
+        text: "Bezeichnung, unter der CBD-Öle in Österreich verkauft werden. Sie sind laut Kennzeichnung nicht zum Verzehr bestimmt, weil CBD-Extrakte als Lebensmittel eine Zulassung als Novel Food bräuchten.",
+      },
+      {
+        term: "Breitspektrum",
+        text: "Extrakt, der neben CBD weitere Pflanzenstoffe wie Cannabinoide und Terpene enthält, aus dem das THC aber weitgehend entfernt wurde. Mehr dazu: [Vollspektrum, Breitspektrum, Isolat](/ratgeber/vollspektrum-breitspektrum-isolat/).",
+      },
+      {
+        term: "Cannabinoide",
+        text: "Gruppe von Pflanzenstoffen, die vor allem in der Hanfpflanze vorkommen. Bekannt sind über hundert, darunter CBD, CBG, CBN und THC.",
+      },
+      {
+        term: "CBD (Cannabidiol)",
+        text: "Nicht berauschendes Cannabinoid aus Nutzhanf und namensgebender Inhaltsstoff von CBD-Ölen, -Blüten und -Kosmetik. Die Grundlagen: [Was ist CBD?](/ratgeber/was-ist-cbd/)",
+      },
+      {
+        term: "CBG (Cannabigerol)",
+        text: "Cannabinoid, das in Nutzhanf meist nur in kleinen Mengen vorkommt. Viele Analysezertifikate weisen den CBG-Gehalt zusätzlich aus.",
+      },
+      {
+        term: "Charge",
+        text: "Menge eines Produkts, die unter gleichen Bedingungen hergestellt wurde. Die Chargennummer auf dem Etikett sollte mit der auf dem Analysezertifikat übereinstimmen.",
+      },
+      {
+        term: "CO₂-Extraktion",
+        text: "Verfahren, bei dem Cannabinoide und Terpene mit Kohlendioxid unter Druck aus der Pflanze gelöst werden. Es arbeitet ohne organische Lösungsmittel und ist bei CBD-Extrakten weit verbreitet.",
+      },
+      {
+        term: "Decarboxylierung",
+        text: "Umwandlung der sauren Vorstufen CBDA und THCA in CBD und THC durch Wärme. Laborberichte weisen deshalb oft auch die Säureformen aus und rechnen sie in den Gesamtgehalt ein.",
+      },
+      {
+        term: "Entourage-Effekt",
+        text: "Hypothese, nach der die Inhaltsstoffe der Hanfpflanze im Zusammenspiel anders wirken als einzeln. Sie ist wissenschaftlich nicht abschließend belegt.",
+      },
+      {
+        term: "Grinder",
+        text: "Mühle zum Zerkleinern von Kräutern und Blüten. Modelle mit Siebfach sammeln zusätzlich feine Pflanzenpartikel. Unsere Auswahl: [Zubehör](/shop/zubehoer/).",
+      },
+      {
+        term: "Hanfsamenöl",
+        text: "Aus den Samen der Hanfpflanze gepresstes Speiseöl. Es enthält selbst kaum Cannabinoide und dient in CBD-Ölen als Trägeröl.",
+      },
+      {
+        term: "Isolat",
+        text: "Nahezu reines CBD, meist mit über 99 % Reinheit, ohne weitere Pflanzenstoffe wie Terpene oder andere Cannabinoide.",
+      },
+      {
+        term: "Kosmetikverordnung",
+        text: "EU-Verordnung (EG) Nr. 1223/2009. Sie regelt, welche Inhaltsstoffe Kosmetik enthalten darf und wie sie gekennzeichnet wird. CBD-Kosmetik muss diese Vorgaben erfüllen und vor dem Verkauf im EU-Kosmetikportal (CPNP) gemeldet werden.",
+      },
+      {
+        term: "MCT-Öl",
+        text: "Öl aus mittelkettigen Triglyceriden, meist aus Kokos- oder Palmkernöl gewonnen. Neben Hanfsamenöl ein häufiges Trägeröl für CBD-Extrakte.",
+      },
+      {
+        term: "Monopolverwaltung",
+        text: "Die Monopolverwaltung GmbH verwaltet in Österreich das Tabakmonopol. Hanf-Fachgeschäfte können bei ihr eine Lizenz beantragen, um Hanfblüten übergangsweise bis Ende 2028 zu verkaufen.",
+      },
+      {
+        term: "Novel Food",
+        text: "Lebensmittel, die vor dem 15. Mai 1997 in der EU nicht in nennenswertem Umfang verzehrt wurden. CBD-Extrakte gelten als Novel Food und dürfen ohne Zulassung nicht als Lebensmittel verkauft werden.",
+      },
+      {
+        term: "Nutzhanf",
+        text: "Hanfsorten aus dem EU-Sortenkatalog, die nur sehr wenig THC bilden. Aus ihnen werden CBD-Produkte hergestellt.",
+      },
+      {
+        term: "Tabakmonopol",
+        text: "In Österreich ist der Handel mit Tabakwaren staatlich geregelt. Seit 2025 fallen auch rauchbare Hanfblüten darunter – sie dürfen nicht versendet und nur an Personen ab 18 Jahren verkauft werden. Hintergründe: [CBD in Österreich](/ratgeber/cbd-legal-oesterreich/).",
+      },
+      {
+        term: "Terpene",
+        text: "Aromastoffe, die Pflanzen wie Hanf, Zitrusfrüchten oder Lavendel ihren typischen Duft geben, etwa Myrcen, Limonen oder Linalool. Mehr dazu: [Terpene erklärt](/ratgeber/terpene/).",
+      },
+      {
+        term: "THC (Tetrahydrocannabinol)",
+        text: "Berauschendes Cannabinoid der Hanfpflanze. In Österreich dürfen Hanfprodukte höchstens 0,3 % THC enthalten.",
+      },
+      {
+        term: "Trägeröl",
+        text: "Öl, in dem der CBD-Extrakt gelöst ist – meist Hanfsamenöl oder MCT-Öl. Es bestimmt Geschmack, Konsistenz und Haltbarkeit eines CBD-Öls mit.",
+      },
+      {
+        term: "Trichome",
+        text: "Feine Harzdrüsen auf Blüten und Blättern der Hanfpflanze. In ihnen entstehen Cannabinoide und Terpene.",
+      },
+      {
+        term: "Vollspektrum",
+        text: "Extrakt, der das natürliche Profil der Pflanze abbildet: CBD, weitere Cannabinoide, Terpene – und THC in Spuren unter dem gesetzlichen Grenzwert.",
+      },
+    ],
+  },
+  wishlist: {
+    slug: "merkliste",
+    label: "Merkliste",
+    eyebrow: "Deine Auswahl",
+    title: "Merkliste",
+    meta: {
+      title: "Merkliste | Cannaplace 1080 CBD Shop Wien",
+      description:
+        "Deine gemerkten Produkte bei Cannaplace 1080: CBD Öle, Kosmetik und Zubehör vergleichen, später bestellen oder im Shop in der Josefstädter Straße 56 ansehen.",
+    },
+    lead: "Alle Produkte, die du mit dem Herz markiert hast – zum Vergleichen, Bestellen oder Ansehen im Shop.",
+    emptyTitle: "Deine Merkliste ist noch leer",
+    emptyText: "Tippe bei einem Produkt auf das Herz, um es hier zu speichern.",
+    emptyCta: "Produkte entdecken",
+    clear: "Merkliste leeren",
+    note: "Die Merkliste wird nur in diesem Browser gespeichert – ohne Konto und ohne Cookies.",
   },
   pages: {
     lab: {
@@ -757,27 +938,36 @@ export const de: Dict = {
       body: [
         {
           type: "note",
-          text: "Platzhalter: Die Angaben in eckigen Klammern müssen vor dem Launch vom Shop ergänzt werden.",
+          text: "Vor dem Launch bestätigen: Firmenwortlaut und Firmenbuchdaten stammen aus dem öffentlichen Firmenbuch. Die Angaben in eckigen Klammern ergänzt der Shop.",
         },
         {
           type: "table",
           rows: [
-            ["Unternehmen", "[Firmenwortlaut bzw. Name der Inhaberin oder des Inhabers]"],
+            ["Unternehmen", "CANNAPLACE OG"],
+            ["Rechtsform", "Offene Gesellschaft (OG)"],
             ["Geschäftsbezeichnung", "Cannaplace 1080 CBD Shop"],
+            ["Sitz", "Wien"],
             ["Anschrift", "Josefstädter Straße 56, 1080 Wien, Österreich"],
             ["Telefon", "+43 676 7731571"],
             ["E-Mail", "[E-Mail-Adresse]"],
+            ["Firmenbuchnummer", "FN 619212g"],
+            ["Firmenbuchgericht", "Handelsgericht Wien"],
             ["UID-Nummer", "[ATU…]"],
-            ["Firmenbuch", "[Firmenbuchnummer und -gericht, falls eingetragen]"],
             ["Unternehmensgegenstand", "Handel mit Hanf- und CBD-Produkten sowie Zubehör"],
-            ["Gewerbebehörde", "[zuständige Gewerbebehörde]"],
+            ["Gewerbebehörde", "[zuständiges Magistratisches Bezirksamt]"],
             ["Kammer", "Wirtschaftskammer Wien"],
+            ["Rechtsvorschriften", "Gewerbeordnung, abrufbar im [Rechtsinformationssystem des Bundes](https://www.ris.bka.gv.at)"],
           ],
         },
         { type: "h2", text: "Offenlegung gemäß § 25 Mediengesetz" },
         {
           type: "p",
-          text: "Medieninhaber: [Firmenwortlaut bzw. Name]. Grundlegende Richtung: Information über Sortiment und Leistungen von Cannaplace 1080 sowie allgemeine Informationen rund um CBD.",
+          text: "Medieninhaberin: CANNAPLACE OG, Josefstädter Straße 56, 1080 Wien. Grundlegende Richtung: Information über Sortiment und Leistungen von Cannaplace 1080 sowie allgemeine Informationen rund um CBD.",
+        },
+        { type: "h2", text: "Website & Suchmaschinenoptimierung" },
+        {
+          type: "p",
+          text: "Konzept, Umsetzung und SEO: [Getflowly](https://getflowly.at)",
         },
         { type: "h2", text: "Haftung für Inhalte" },
         {
@@ -805,7 +995,7 @@ export const de: Dict = {
         { type: "h2", text: "Verantwortlicher" },
         {
           type: "p",
-          text: "[Firmenwortlaut bzw. Name], Josefstädter Straße 56, 1080 Wien, Telefon +43 676 7731571, E-Mail: [E-Mail-Adresse].",
+          text: "CANNAPLACE OG, Josefstädter Straße 56, 1080 Wien, Telefon +43 676 7731571, E-Mail: [E-Mail-Adresse].",
         },
         { type: "h2", text: "Keine Tracking-Cookies" },
         {
@@ -815,7 +1005,7 @@ export const de: Dict = {
         { type: "h2", text: "Lokale Speicherung im Browser" },
         {
           type: "p",
-          text: "Damit du die Altersabfrage nicht bei jedem Besuch erneut bestätigen musst, speichern wir deine Bestätigung lokal in deinem Browser (Local Storage). Gleiches gilt für die gewählte Schriftvariante in der Vorschau. Diese Informationen verlassen dein Gerät nicht und lassen sich jederzeit über die Browser-Einstellungen löschen.",
+          text: "Damit du die Altersabfrage nicht bei jedem Besuch erneut bestätigen musst, speichern wir deine Bestätigung lokal in deinem Browser (Local Storage). Gleiches gilt für deine Merkliste und die gewählte Schriftvariante in der Vorschau. Diese Informationen verlassen dein Gerät nicht und lassen sich jederzeit über die Browser-Einstellungen löschen.",
         },
         { type: "h2", text: "Hosting und Server-Logfiles" },
         {
@@ -825,7 +1015,7 @@ export const de: Dict = {
         { type: "h2", text: "Externe Links" },
         {
           type: "p",
-          text: "Links zu Google Maps und Instagram öffnen die Dienste der jeweiligen Anbieter. Erst beim Klick werden Daten an diese Anbieter übertragen; es gelten deren Datenschutzbestimmungen.",
+          text: "Links zu Google Maps, unseren Google-Bewertungen und Instagram öffnen die Dienste der jeweiligen Anbieter. Erst beim Klick werden Daten an diese Anbieter übertragen; es gelten deren Datenschutzbestimmungen.",
         },
         { type: "h2", text: "Deine Rechte" },
         {

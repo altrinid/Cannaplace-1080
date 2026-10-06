@@ -45,6 +45,11 @@ export function slugify(text: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+/** Text without inline markup: `[label](href)` becomes `label`, `**bold**` becomes `bold`. */
+export function plainText(text: string) {
+  return text.replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1");
+}
+
 /** Plain text of a block list. */
 export function blocksText(blocks: Block[]) {
   return blocks

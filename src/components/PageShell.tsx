@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { getDict, otherLang } from "@/content";
 import type { Lang } from "@/content/types";
-import { homePath, navItems, shopPath } from "@/lib/routes";
+import { homePath, infoPath, navItems, shopPath, wishlistPath } from "@/lib/routes";
+import { searchIndex } from "@/lib/search";
 import { SHOP } from "@/lib/site";
 import { AgeGate } from "./AgeGate";
 import { CartProvider } from "./CartProvider";
@@ -14,7 +15,7 @@ function AnnouncementBar({ items }: { items: string[] }) {
     <div className="bg-forest-900 text-cream">
       <div className="container-x t-body-sm flex items-center justify-center gap-6 py-2.5 text-center">
         {items.map((item, i) => (
-          <span key={item} className={`items-center gap-6 ${i === 0 ? "flex" : "hidden md:flex"}`}>
+          <span key={item} className={`items-center gap-6 ${["flex", "hidden md:flex", "hidden lg:flex"][Math.min(i, 2)]}`}>
             {i > 0 && <span aria-hidden="true" className="h-1 w-1 rounded-full bg-kraft-400" />}
             {item}
           </span>
@@ -55,7 +56,14 @@ export function PageShell({
         hrefs={hrefs}
         homeHref={homePath(lang)}
         shopHref={shopPath(lang)}
+        wishlistHref={wishlistPath(lang)}
+        accountLinks={[
+          { label: t.wishlist.title, href: wishlistPath(lang) },
+          { label: t.pages.shipping.label, href: infoPath(lang, "shipping") },
+          { label: t.pages.contact.label, href: infoPath(lang, "contact") },
+        ]}
         phone={{ href: SHOP.phoneHref, display: SHOP.phoneDisplay }}
+        searchItems={searchIndex(lang)}
       />
       <main id="main">{children}</main>
       <Footer lang={lang} />

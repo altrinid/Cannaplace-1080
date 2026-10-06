@@ -5,7 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 export const dynamic = "force-static";
 
 // Date of the last content release; articles carry their own update date.
-const CONTENT_UPDATED = "2026-10-05";
+const CONTENT_UPDATED = "2026-10-06";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return allPages().flatMap((page) => {

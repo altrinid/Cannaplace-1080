@@ -68,7 +68,7 @@ export const de: Record<ArticleId, ArticleCopy> = {
       },
       {
         type: "p",
-        text: "Welche Variante du wählst, ist vor allem eine Frage der persönlichen Vorliebe. Viele schätzen Vollspektrum-Produkte, weil sie das natürliche Profil der Pflanze abbilden. Wer THC-Spuren möglichst vermeiden möchte, greift eher zu Breitspektrum oder Isolat.",
+        text: "Welche Variante du wählst, ist vor allem eine Frage der persönlichen Vorliebe. Viele schätzen Vollspektrum-Produkte, weil sie das natürliche Profil der Pflanze abbilden. Wer THC-Spuren möglichst vermeiden möchte, greift eher zu Breitspektrum oder Isolat. Ausführlich erklärt: [Vollspektrum, Breitspektrum oder Isolat?](/ratgeber/vollspektrum-breitspektrum-isolat/)",
       },
       { type: "h2", text: "Was bedeuten die Prozentangaben?" },
       {
@@ -342,6 +342,280 @@ export const de: Record<ArticleId, ArticleCopy> = {
       {
         q: "Darf ich nach der Verwendung von CBD Auto fahren?",
         a: "CBD wirkt nicht berauschend, viele Produkte enthalten aber THC-Spuren. Wer durch Suchtgift beeinträchtigt ist, darf kein Fahrzeug lenken – sei deshalb vorsichtig und sprich im Zweifel mit einer Ärztin oder einem Arzt.",
+      },
+    ],
+  },
+  spectrum: {
+    slug: "vollspektrum-breitspektrum-isolat",
+    tag: "Grundlagen",
+    title: "Vollspektrum, Breitspektrum oder Isolat? Die Unterschiede",
+    meta: {
+      title: "Vollspektrum, Breitspektrum, Isolat: Unterschiede | Cannaplace",
+      description:
+        "Vollspektrum, Breitspektrum oder Isolat? Was in den drei CBD-Extrakten steckt, wie sie hergestellt werden und woran du sie auf dem Laborbericht erkennst.",
+    },
+    lead: "Auf CBD-Ölen und Extrakten liest du fast immer einen dieser drei Begriffe. Sie beschreiben, welche Inhaltsstoffe der Hanfpflanze im Produkt stecken – und welche nicht. Hier erfährst du die Unterschiede und woran du sie auf dem Laborbericht erkennst.",
+    body: [
+      { type: "h2", text: "Die drei Extraktarten im Überblick" },
+      {
+        type: "p",
+        text: "Am Anfang steht immer ein Hanfextrakt: Aus Blüten und Blättern von Nutzhanf werden Cannabinoide, Terpene und weitere Pflanzenstoffe gelöst – häufig mit CO₂, manchmal mit Ethanol. Was danach mit dem Extrakt passiert, entscheidet, ob ein Vollspektrum-Extrakt, ein Breitspektrum-Extrakt oder ein Isolat entsteht.",
+      },
+      {
+        type: "table",
+        head: ["", "Vollspektrum", "Breitspektrum", "Isolat"],
+        rows: [
+          ["CBD", "ja", "ja", "ja, nahezu rein (meist über 99 %)"],
+          ["Weitere Cannabinoide wie CBG", "ja", "ja", "nein"],
+          ["Terpene", "ja, sofern bei der Verarbeitung erhalten", "meist ja", "nein"],
+          ["THC", "in Spuren unter dem Grenzwert", "weitgehend entfernt", "nicht nachweisbar"],
+          ["Aroma", "kräftig, pflanzlich", "mild bis pflanzlich", "weitgehend neutral"],
+        ],
+      },
+      { type: "h2", text: "Vollspektrum: das Profil der ganzen Pflanze" },
+      {
+        type: "p",
+        text: "Ein Vollspektrum-Extrakt (englisch: full spectrum) bildet das natürliche Profil der Hanfpflanze ab. Neben CBD enthält er weitere Cannabinoide wie CBG oder CBN, Terpene und Flavonoide – und THC in Spuren. In Österreich muss der THC-Gehalt des fertigen Produkts unter 0,3 % liegen.",
+      },
+      {
+        type: "p",
+        text: "Viele schätzen Vollspektrum-Produkte wegen ihres kräftigen, pflanzlichen Aromas. Oft ist dabei vom **Entourage-Effekt** die Rede: der Annahme, dass die Pflanzenstoffe im Zusammenspiel anders wirken als einzeln. Diese Hypothese ist wissenschaftlich nicht abschließend belegt – ein seriöser Händler verspricht dir deshalb keine bestimmte Wirkung.",
+      },
+      { type: "h2", text: "Breitspektrum: Pflanzenstoffe ohne THC" },
+      {
+        type: "p",
+        text: "Ein Breitspektrum-Extrakt (broad spectrum) entsteht aus einem Vollspektrum-Extrakt, aus dem das THC in einem zusätzlichen Schritt – etwa durch Chromatografie – weitgehend entfernt wurde. Die übrigen Cannabinoide und Terpene bleiben größtenteils erhalten. Breitspektrum ist eine Option, wenn du die Vielfalt der Pflanze möchtest, THC-Spuren aber möglichst vermeiden willst.",
+      },
+      {
+        type: "note",
+        text: "Weitgehend THC-frei heißt nicht in jedem Fall null: Je nach Verfahren und Messgrenze des Labors können minimale Restmengen bleiben. Im Analysezertifikat steht dann „nicht nachweisbar“ oder ein Wert unter der Bestimmungsgrenze.",
+      },
+      { type: "h2", text: "Isolat: reines CBD" },
+      {
+        type: "p",
+        text: "Beim Isolat wird CBD so weit aufgereinigt, dass ein weißes, kristallines Pulver mit meist über 99 % CBD entsteht. Weitere Cannabinoide, Terpene und THC sind praktisch nicht mehr enthalten. Isolat ist geschmacks- und geruchsneutral und lässt sich genau dosieren – deshalb wird es häufig in Kosmetik verwendet.",
+      },
+      { type: "h2", text: "So erkennst du die Extraktart auf dem Laborbericht" },
+      {
+        type: "p",
+        text: "Die Bezeichnung auf dem Etikett ist ein guter Anfang, doch erst das Analysezertifikat zeigt, was tatsächlich drin ist. Achte auf das Cannabinoid-Profil:",
+      },
+      {
+        type: "ul",
+        items: [
+          "**Vollspektrum:** CBD als Hauptwert, dazu weitere Cannabinoide wie CBG oder CBN und ein THC-Wert unter 0,3 %.",
+          "**Breitspektrum:** CBD und weitere Cannabinoide, beim THC „nicht nachweisbar“ oder ein Wert unter der Bestimmungsgrenze.",
+          "**Isolat:** praktisch nur CBD, alle anderen Cannabinoide unter der Nachweisgrenze.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Wie du ein Zertifikat Schritt für Schritt liest, erklären wir in [So liest du ein Analysezertifikat richtig](/ratgeber/analysezertifikat-lesen/). Die Werte unserer aktuellen Chargen findest du unter [Laborberichte](/laborberichte/).",
+      },
+      { type: "h2", text: "Welche Variante passt zu dir?" },
+      {
+        type: "p",
+        text: "Eine richtige oder falsche Wahl gibt es nicht – es ist vor allem eine Frage der persönlichen Vorliebe:",
+      },
+      {
+        type: "ul",
+        items: [
+          "**Du magst ein natürliches, kräftiges Aroma?** Dann liegt Vollspektrum nahe.",
+          "**Du möchtest THC-Spuren möglichst vermeiden,** etwa wegen Drogentests im Beruf oder im Straßenverkehr? Dann eher Breitspektrum oder Isolat – und immer den Laborbericht prüfen.",
+          "**Du suchst CBD in Kosmetik?** Hier wird meist Isolat verwendet, weil es geruchsneutral ist.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Unsere [CBD Öle](/shop/cbd-oel/) gibt es mit 5, 10 und 20 % CBD – zu jeder Charge zeigen wir dir den Laborbericht. Im Shop in der Josefstädter Straße 56 beraten wir dich gerne persönlich.",
+      },
+    ],
+    faq: [
+      {
+        q: "Ist Vollspektrum besser als Isolat?",
+        a: "Nicht grundsätzlich. Vollspektrum enthält mehr Pflanzenstoffe und schmeckt kräftiger, Isolat ist nahezu reines CBD und neutral. Welche Variante passt, hängt von deinen Vorlieben ab – dass ein bestimmter Extrakt besser wirkt, ist wissenschaftlich nicht belegt.",
+      },
+      {
+        q: "Enthält Breitspektrum gar kein THC?",
+        a: "Das THC wurde weitgehend entfernt. Ob Restmengen messbar sind, zeigt das Analysezertifikat: Dort steht beim THC „nicht nachweisbar“ oder ein Wert unter der Bestimmungsgrenze.",
+      },
+      {
+        q: "Kann Vollspektrum-CBD bei einem Drogentest auffallen?",
+        a: "Das ist nicht ausgeschlossen. Auch legale Produkte mit weniger als 0,3 % THC können bei regelmäßiger Verwendung zu messbaren THC-Werten führen. Wenn das für dich relevant ist, wähle Breitspektrum oder Isolat und prüfe den Laborbericht.",
+      },
+    ],
+  },
+  terpenes: {
+    slug: "terpene",
+    tag: "Grundlagen",
+    title: "Terpene erklärt: Was Hanf seinen Duft verleiht",
+    meta: {
+      title: "Terpene erklärt: Myrcen, Limonen & Co. im Hanf | Cannaplace",
+      description:
+        "Was sind Terpene? Wie Myrcen, Limonen, Linalool und Co. das Aroma von Hanf prägen, wo sie sonst vorkommen und warum sie auf dem Laborbericht stehen können.",
+    },
+    lead: "Zitronig, erdig, würzig oder blumig: Dass Hanfsorten so unterschiedlich duften, liegt an den Terpenen. Hier erfährst du, was Terpene sind, welche im Hanf am häufigsten vorkommen und worauf du bei Produkten achten kannst.",
+    body: [
+      { type: "h2", text: "Was sind Terpene?" },
+      {
+        type: "p",
+        text: "Terpene sind flüchtige Aromastoffe, die viele Pflanzen bilden – Nadelbäume, Zitrusfrüchte, Kräuter wie Lavendel und Rosmarin und eben auch Hanf. Sie bestimmen, wie eine Pflanze riecht und schmeckt, und schützen sie in der Natur etwa vor Fraßfeinden. Bekannt sind viele tausend verschiedene Terpene.",
+      },
+      {
+        type: "p",
+        text: "In der Hanfpflanze entstehen Terpene gemeinsam mit den Cannabinoiden in den **Trichomen** – den feinen Harzdrüsen auf Blüten und Blättern. Je nach Sorte, Anbau, Erntezeitpunkt und Trocknung fällt das Terpenprofil ganz unterschiedlich aus.",
+      },
+      { type: "h2", text: "Die wichtigsten Terpene im Hanf" },
+      {
+        type: "table",
+        head: ["Terpen", "Aroma", "Kommt auch vor in"],
+        rows: [
+          ["Myrcen", "erdig, moschusartig, leicht fruchtig", "Hopfen, Mango, Thymian"],
+          ["Limonen", "zitronig, frisch", "Schalen von Zitrusfrüchten"],
+          ["Beta-Caryophyllen", "pfeffrig, würzig, holzig", "schwarzer Pfeffer, Gewürznelken"],
+          ["Linalool", "blumig, erinnert an Lavendel", "Lavendel, Koriander"],
+          ["Alpha-Pinen", "harzig, nach Kiefernnadeln", "Kiefer, Rosmarin"],
+          ["Humulen", "herb, holzig, erdig", "Hopfen"],
+          ["Terpinolen", "frisch, krautig, leicht blumig", "Flieder, Teebaum, Äpfel"],
+        ],
+      },
+      { type: "h2", text: "Terpene und das Aroma einer Sorte" },
+      {
+        type: "p",
+        text: "Das typische Aroma einer Sorte ergibt sich aus dem Zusammenspiel vieler Terpene. Bei unseren Blüten im Shop erkennst du das gut: [Lemon Haze](/shop/cbd-blueten/lemon-haze/) duftet frisch und zitronig, [Orange Bud](/shop/cbd-blueten/orange-bud/) fruchtig-süß und [OG Kush](/shop/cbd-blueten/og-kush/) erdig-würzig mit einer Note von Kiefer. Die Sortennamen beschreiben dabei das Aroma – nicht eine bestimmte Wirkung.",
+      },
+      {
+        type: "note",
+        text: "Über die Wirkung einzelner Terpene beim Menschen wird viel geschrieben, die Forschung dazu steht aber noch am Anfang. Wir beschreiben Terpene deshalb als das, was sie sicher sind: Aromastoffe.",
+      },
+      { type: "h2", text: "Terpene in CBD-Produkten" },
+      {
+        type: "ul",
+        items: [
+          "**Vollspektrum- und Breitspektrum-Extrakte** enthalten Terpene aus der Pflanze, sofern sie bei der Verarbeitung erhalten bleiben. Mehr dazu in [Vollspektrum, Breitspektrum oder Isolat?](/ratgeber/vollspektrum-breitspektrum-isolat/)",
+          "**Isolate** enthalten keine Terpene. Manche Hersteller setzen Terpene nachträglich zu, um ein bestimmtes Aroma zu erzeugen – das sollte dann auf dem Etikett stehen.",
+          "**Kosmetik** kann Terpene als Duftstoffe enthalten, etwa Linalool oder Limonen. Ab bestimmten Konzentrationen müssen sie in der EU als mögliche Duftstoff-Allergene in der Liste der Inhaltsstoffe stehen.",
+        ],
+      },
+      { type: "h2", text: "Terpene erhalten: richtig lagern" },
+      {
+        type: "p",
+        text: "Terpene sind flüchtig: Wärme, Licht und Luft lassen sie mit der Zeit verdunsten oder oxidieren, das Aroma wird schwächer. Lagere Blüten und Öle deshalb kühl, dunkel und gut verschlossen, zum Beispiel im [UV-Aufbewahrungsglas](/shop/zubehoer/uv-aufbewahrungsglas-100-ml/). Alle Tipps findest du in [CBD richtig lagern](/ratgeber/cbd-lagern/).",
+      },
+      { type: "h2", text: "Stehen Terpene auf dem Laborbericht?" },
+      {
+        type: "p",
+        text: "Ein Standard-Analysezertifikat zeigt vor allem Cannabinoide und Schadstoffe. Ein Terpenprofil wird nur gemessen, wenn es eigens beauftragt wurde – fehlt es, sagt das nichts über die Qualität aus. Wie du ein Zertifikat liest, erklärt [So liest du ein Analysezertifikat richtig](/ratgeber/analysezertifikat-lesen/).",
+      },
+    ],
+    faq: [
+      {
+        q: "Sind Terpene dasselbe wie Cannabinoide?",
+        a: "Nein. Cannabinoide wie CBD und THC kommen fast nur in Hanf vor, Terpene dagegen in sehr vielen Pflanzen. Beide entstehen aber in den Harzdrüsen der Hanfpflanze.",
+      },
+      {
+        q: "Machen Terpene high?",
+        a: "Nein. Terpene sind Aromastoffe, die du auch aus Zitrusfrüchten, Kräutern oder Gewürzen kennst. Berauschend wirkt beim Hanf das THC.",
+      },
+      {
+        q: "Warum riecht dasselbe Produkt manchmal unterschiedlich?",
+        a: "Das Terpenprofil hängt von Sorte, Anbau, Ernte und Lagerung ab und kann sich deshalb von Charge zu Charge leicht unterscheiden. Mit der Zeit verfliegen Terpene außerdem – gute Lagerung erhält das Aroma länger.",
+      },
+    ],
+  },
+  storage: {
+    slug: "cbd-lagern",
+    tag: "Qualität",
+    title: "CBD richtig lagern: Öl, Blüten und Kosmetik",
+    meta: {
+      title: "CBD richtig lagern: Tipps für Öl, Blüten & Kosmetik | Cannaplace",
+      description:
+        "So bleiben CBD-Öl, CBD-Blüten und CBD-Kosmetik lange gut: die richtige Temperatur, Schutz vor Licht und Luft, Haltbarkeit nach dem Öffnen und typische Fehler.",
+    },
+    lead: "Licht, Wärme und Sauerstoff sind die größten Feinde von CBD-Produkten. Mit ein paar einfachen Regeln bleiben Öle, Blüten und Kosmetik deutlich länger frisch – hier sind sie.",
+    body: [
+      { type: "h2", text: "Warum die Lagerung wichtig ist" },
+      {
+        type: "p",
+        text: "Cannabinoide und Terpene sind empfindlich. UV-Licht, Wärme und Sauerstoff können CBD mit der Zeit abbauen und das Aroma verfliegen lassen; Trägeröle wie Hanfsamenöl können ranzig werden. Richtig gelagert behält ein Produkt seine Qualität dagegen bis zum Ende der angegebenen Haltbarkeit.",
+      },
+      { type: "h2", text: "Die vier Grundregeln" },
+      {
+        type: "ul",
+        items: [
+          "**Dunkel:** Direktes Sonnenlicht vermeiden. Braun- oder Violettglas schützt zusätzlich vor UV-Strahlung.",
+          "**Kühl:** Zimmertemperatur oder etwas darunter, fern von Heizung, Herd und Fensterbank.",
+          "**Luftdicht:** Flaschen, Dosen und Gläser nach jeder Verwendung gut verschließen.",
+          "**Trocken:** Feuchtigkeit fördert Schimmel – besonders bei Blüten.",
+        ],
+      },
+      { type: "h2", text: "CBD-Öl lagern" },
+      {
+        type: "ul",
+        items: [
+          "Aufrecht und gut verschlossen aufbewahren, damit kein Öl in den Verschluss läuft.",
+          "Ein Schrank oder eine Schublade bei Raumtemperatur ist ideal. Im Kühlschrank hält es sich ebenfalls, kann dort aber dickflüssiger werden – dann kurz bei Raumtemperatur stehen lassen.",
+          "Die Pipette nicht mit Fingern oder Oberflächen in Berührung bringen und sauber zurückstecken.",
+          "Auf das Mindesthaltbarkeitsdatum achten. Riecht das Öl ranzig, ist es nicht mehr gut.",
+        ],
+      },
+      { type: "h2", text: "CBD-Blüten lagern" },
+      {
+        type: "ul",
+        items: [
+          "In einem luftdichten Glas mit Schraub- oder Bügelverschluss aufbewahren – Plastikbeutel sind auf Dauer ungeeignet.",
+          "Lichtgeschützt lagern, idealerweise in UV-Glas wie unserem [UV-Aufbewahrungsglas](/shop/zubehoer/uv-aufbewahrungsglas-100-ml/).",
+          "Auf die Luftfeuchtigkeit achten: Zu trocken werden Blüten brüchig und verlieren Aroma, zu feucht droht Schimmel. Viele nutzen dafür Feuchtigkeitsregulatoren für etwa 58–62 % relative Luftfeuchte.",
+          "Nicht im Kühlschrank lagern: Beim Öffnen bildet sich Kondenswasser.",
+          "Blüten erst kurz vor der Verwendung mit dem [Grinder](/shop/zubehoer/) zerkleinern – ganze Blüten halten ihr Aroma länger.",
+        ],
+      },
+      { type: "h2", text: "CBD-Kosmetik lagern" },
+      {
+        type: "p",
+        text: "Balsame, Cremes und Lippenpflege lagerst du wie andere Naturkosmetik: verschlossen, bei Raumtemperatur und ohne direkte Sonne. Das Tiegel-Symbol mit einer Zahl (etwa „12M“) auf der Verpackung gibt an, wie viele Monate das Produkt nach dem Öffnen haltbar ist. Entnimm Cremes aus Dosen am besten mit sauberen, trockenen Fingern oder einem kleinen Spatel.",
+      },
+      { type: "h2", text: "Wie lange ist CBD haltbar?" },
+      {
+        type: "table",
+        head: ["Produkt", "Ungeöffnet", "Nach dem Öffnen"],
+        rows: [
+          ["CBD-Öl", "laut Mindesthaltbarkeitsdatum", "meist einige Monate – Herstellerangabe beachten"],
+          ["CBD-Blüten", "im verschlossenen Glas mehrere Monate", "Aroma lässt mit jedem Öffnen nach – zügig verbrauchen"],
+          ["CBD-Kosmetik", "laut Haltbarkeitsdatum", "laut Tiegel-Symbol, z. B. 6 oder 12 Monate"],
+        ],
+      },
+      {
+        type: "note",
+        text: "Diese Angaben sind Richtwerte. Maßgeblich sind immer die Angaben auf der Verpackung.",
+      },
+      { type: "h2", text: "Typische Fehler" },
+      {
+        type: "ul",
+        items: [
+          "Die Flasche auf der Fensterbank oder im Auto liegen lassen.",
+          "Blüten in Plastiktüten oder offen aufbewahren.",
+          "Produkte im Badezimmer lagern – dort ist es oft warm und feucht.",
+          "Verschlüsse offen lassen oder zwischen Flaschen vertauschen.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Fragen zur Lagerung beantworten wir gerne im Shop in der Josefstädter Straße 56 oder am Telefon. Und warum sich das Aroma überhaupt verändert, erklärt [Terpene erklärt](/ratgeber/terpene/).",
+      },
+    ],
+    faq: [
+      {
+        q: "Sollte ich CBD-Öl im Kühlschrank lagern?",
+        a: "Das ist nicht nötig, schadet aber nicht. Wichtiger ist, dass das Öl dunkel, kühl und gut verschlossen steht. Aus dem Kühlschrank kann es etwas dickflüssiger sein – kurz bei Raumtemperatur stehen lassen.",
+      },
+      {
+        q: "Woran erkenne ich, dass CBD-Öl nicht mehr gut ist?",
+        a: "An einem ranzigen oder ungewohnt bitteren Geruch, einer deutlichen Farbveränderung oder Trübung. Dann solltest du das Öl nicht mehr verwenden.",
+      },
+      {
+        q: "Verliert CBD mit der Zeit an Stärke?",
+        a: "Ja, langsam: Licht, Wärme und Sauerstoff können Cannabinoide abbauen. Bei richtiger Lagerung läuft dieser Prozess deutlich langsamer ab.",
       },
     ],
   },

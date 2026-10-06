@@ -32,20 +32,34 @@ export const en: Dict = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     language: "Language",
+    wishlist: "Wishlist",
+    accountTitle: "Customer account",
+    accountText:
+      "Log-in and order history arrive with the launch of the online shop. Your wishlist already works — saved in your browser.",
+    searchPanel: {
+      title: "Search the shop",
+      placeholder: "Products, guides, topics …",
+      close: "Close search",
+      empty: "No results for “{q}”. Try another word — or give us a call, we’re happy to help.",
+      popular: "Popular searches",
+      results: { one: "{n} result", other: "{n} results" },
+      suggestions: ["CBD oil", "Cosmetics", "Grinder", "Lab report", "Shipping", "Terpenes"],
+      groups: { product: "Products", category: "Categories", article: "Guide", page: "Pages" },
+    },
   },
-  hero: {
+  intro: {
     eyebrow: "CBD shop in Vienna-Josefstadt",
-    titleLine1: "Hemp, the way",
-    titleLine2: "it should be.",
-    lead: "Premium CBD flowers, oils and cosmetics — lab-tested, fairly priced and with personal advice. Order online or visit us at Josefstädter Straße 56.",
-    ctaPrimary: "Shop now",
-    ctaSecondary: "Visit the store",
+    title: "Hemp, the way it should be.",
     rating: "5.0 · 127 Google reviews",
     thc: "THC < 0.3% · lab-tested",
-    floatLabTitle: "Lab-tested",
-    floatLabText: "Certificate of analysis for every product",
-    floatRatingText: "127 reviews on Google",
-    imageAlt: "Cannaplace CBD aroma oil and CBD flowers",
+  },
+  promo: {
+    label: "Offers and recommendations",
+    slide: "Banner {n} of {total}",
+    prev: "Previous banner",
+    next: "Next banner",
+    pause: "Pause automatic rotation",
+    play: "Start automatic rotation",
   },
   valueProps: [
     { icon: "flask", title: "Lab-tested", text: "Every batch comes with a certificate from an independent lab." },
@@ -72,15 +86,25 @@ export const en: Dict = {
     title: "In the heart of Josefstadt",
     text: "Drop by, have a look around and get advice. In our store you’ll find the full range — and honest recommendations instead of sales pitches.",
     hours: "Mon–Fri 10:30–19:00 · Sat 11:00–17:00",
-    reviewSummary: "5.0 · 127 reviews on Google",
-    quote: "„Top Auswahl und gute Beratung.“",
-    quoteAuthor: "Filippo P. · Google review (German)",
     route: "Get directions",
     call: "Call us",
     more: "Contact & directions",
     mapAlt: "Map: Cannaplace at Josefstädter Straße 56, 1080 Vienna",
   },
-  journal: { eyebrow: "Guide", title: "Knowledge about CBD", link: "All articles", readMore: "Read more" },
+  reviews: {
+    eyebrow: "Reviews",
+    title: "What our customers say",
+    text: "Honest advice and tested quality — that’s what the reviews on our Google profile talk about.",
+    summary: "{count} reviews on Google",
+    all: "All reviews on Google",
+    source: { google: "Google review", shop: "In-store review" },
+    translated: "Translated from German",
+    inviteTitle: "Visited us already?",
+    inviteText:
+      "Tell others about your visit: your Google review helps us — and everyone looking for an honest CBD shop in Vienna.",
+    inviteCta: "Write a review",
+  },
+  journal: { eyebrow: "Guide", title: "Knowledge about CBD", link: "Go to the guide", readMore: "Read more" },
   homeSeo: {
     eyebrow: "CBD shop Vienna",
     title: "Your CBD shop in Vienna-Josefstadt",
@@ -141,6 +165,12 @@ export const en: Dict = {
     hoursShort: "Mon–Fri 10:30–19:00 · Sat 11:00–17:00",
     copyright: "© 2026 Cannaplace 1080 CBD Shop. All rights reserved.",
     legal: "Sale to persons aged 18+ only · All products with THC < 0.3% · Not a medicinal product",
+    withdrawal: "Right of withdrawal",
+    withdrawalHash: "returns-withdrawal",
+    operator: "Operator",
+    register: "Company register",
+    vat: "VAT ID",
+    credit: "Website & SEO:",
   },
   common: {
     home: "Home",
@@ -165,6 +195,7 @@ export const en: Dict = {
     },
     addToCart: "Add to cart",
     wishlist: "Add to wishlist",
+    wishlistShort: "Save",
     inclVat: "incl. 20% VAT",
     badges: { bestseller: "Bestseller", new: "New" },
     shippingAvailable: "Shipping across Austria or pick-up in store",
@@ -181,6 +212,8 @@ export const en: Dict = {
     coaTitle: "Lab report",
     coaText:
       "Key values of the current batch. We’re happy to show you the full certificate in store or send it on request.",
+    coaLink: "View lab report",
+    coaArchive: "View in the lab report archive",
     faqTitle: "Questions about {name}",
     faqShipping: [
       {
@@ -218,8 +251,8 @@ export const en: Dict = {
     notDetected: "not detected",
     footer: "Independent lab · ISO/IEC 17025",
     tested: "Tested {date}",
-    viewAll: "All lab reports",
     currentBatches: "Current batches",
+    pdf: "Full certificate (PDF)",
     toProduct: "View product",
   },
   article: {
@@ -506,14 +539,162 @@ export const en: Dict = {
   },
   guide: {
     meta: {
-      title: "CBD Guide: Basics, Lab Reports & the Law | Cannaplace 1080",
+      title: "CBD Guide: Basics, Quality & the Law | Cannaplace 1080",
       description:
-        "Clearly explained: what CBD is, how to read a certificate of analysis and what’s allowed in Austria — the CBD guide by Cannaplace 1080 in Vienna.",
+        "CBD guide from Vienna: basics, full spectrum vs. isolate, terpenes, lab reports, storage and the legal situation in Austria — plus a CBD glossary from A to Z.",
     },
     eyebrow: "Guide",
     h1: "CBD guide: knowledge about CBD",
     intro:
-      "Honest, easy to understand and without health claims: our guide explains the essentials of CBD, product quality and the legal situation in Austria.",
+      "Honest, easy to understand and without health claims: our guide explains the essentials of CBD, product quality and the legal situation in Austria — and the glossary covers the key terms from A to Z.",
+    topics: {
+      basics: {
+        title: "Basics",
+        text: "What CBD is, how extracts differ and what terpenes have to do with aroma.",
+      },
+      quality: {
+        title: "Quality & storage",
+        text: "Understanding lab reports and storing CBD products so they stay good for longer.",
+      },
+      law: {
+        title: "The law in Austria",
+        text: "THC limit, aroma oil, cosmetics and the tobacco monopoly for hemp flowers.",
+      },
+    },
+    glossaryTeaser: {
+      eyebrow: "Glossary",
+      title: "CBD glossary: terms from A to Z",
+      text: "From broad spectrum to trichomes — the key terms around CBD, briefly explained.",
+      link: "Open the glossary",
+    },
+  },
+  glossary: {
+    slug: "glossary",
+    label: "Glossary",
+    eyebrow: "Guide",
+    title: "CBD glossary: terms from A to Z",
+    meta: {
+      title: "CBD Glossary: Key CBD Terms Explained | Cannaplace 1080",
+      description:
+        "Certificate of analysis, broad spectrum, CBG, terpenes, tobacco monopoly: the Cannaplace 1080 CBD glossary explains the key terms around CBD clearly and briefly.",
+    },
+    lead: "The key terms around CBD, quality and the legal situation in Austria — short, clear and without health claims.",
+    jump: "Jump to letter",
+    terms: [
+      {
+        term: "Aroma oil",
+        text: "The product category under which CBD oils are sold in Austria. They are labelled as not intended for consumption, because CBD extracts would need novel food authorisation to be sold as food.",
+      },
+      {
+        term: "Batch",
+        text: "A quantity of product made under the same conditions. The batch number on the label should match the one on the certificate of analysis.",
+      },
+      {
+        term: "Broad spectrum",
+        text: "An extract that contains other plant compounds such as cannabinoids and terpenes alongside CBD, but from which THC has largely been removed. More: [Full spectrum, broad spectrum, isolate](/en/guide/full-spectrum-broad-spectrum-isolate/).",
+      },
+      {
+        term: "Cannabinoids",
+        text: "A group of plant compounds found mainly in the hemp plant. More than a hundred are known, including CBD, CBG, CBN and THC.",
+      },
+      {
+        term: "Carrier oil",
+        text: "The oil in which the CBD extract is dissolved — usually hemp seed oil or MCT oil. It shapes the taste, texture and shelf life of a CBD oil.",
+      },
+      {
+        term: "CBD (cannabidiol)",
+        text: "A non-intoxicating cannabinoid from industrial hemp and the name-giving ingredient of CBD oils, flowers and cosmetics. The basics: [What is CBD?](/en/guide/what-is-cbd/)",
+      },
+      {
+        term: "CBG (cannabigerol)",
+        text: "A cannabinoid that industrial hemp usually contains only in small amounts. Many certificates of analysis list the CBG content as well.",
+      },
+      {
+        term: "Certificate of analysis (COA)",
+        text: "A lab report for a specific batch. It documents the cannabinoid profile, such as CBD and THC content, and usually tests for pesticides, heavy metals and solvents. Step by step: [How to read a certificate of analysis](/en/guide/how-to-read-a-certificate-of-analysis/).",
+      },
+      {
+        term: "CO₂ extraction",
+        text: "A process in which cannabinoids and terpenes are dissolved out of the plant with pressurised carbon dioxide. It works without organic solvents and is widely used for CBD extracts.",
+      },
+      {
+        term: "Cosmetics Regulation",
+        text: "EU Regulation (EC) No 1223/2009. It governs which ingredients cosmetics may contain and how they are labelled. CBD cosmetics must meet these rules and be notified in the EU Cosmetic Products Notification Portal (CPNP) before sale.",
+      },
+      {
+        term: "Decarboxylation",
+        text: "The conversion of the acidic precursors CBDA and THCA into CBD and THC by heat. That’s why lab reports often list the acid forms too and include them in the total content.",
+      },
+      {
+        term: "Entourage effect",
+        text: "The hypothesis that the compounds of the hemp plant act differently together than on their own. It has not been conclusively proven.",
+      },
+      {
+        term: "Full spectrum",
+        text: "An extract that reflects the plant’s natural profile: CBD, other cannabinoids, terpenes — and THC in traces below the legal limit.",
+      },
+      {
+        term: "Grinder",
+        text: "A mill for breaking up herbs and flowers. Models with a sieve chamber also collect fine plant particles. Our range: [Accessories](/en/shop/accessories/).",
+      },
+      {
+        term: "Hemp seed oil",
+        text: "An edible oil pressed from hemp seeds. It contains hardly any cannabinoids itself and serves as the carrier oil in CBD oils.",
+      },
+      {
+        term: "Industrial hemp",
+        text: "Hemp varieties listed in the EU’s Common Catalogue of varieties that produce only very little THC. CBD products are made from them.",
+      },
+      {
+        term: "Isolate",
+        text: "Almost pure CBD, usually over 99% purity, without other plant compounds such as terpenes or other cannabinoids.",
+      },
+      {
+        term: "MCT oil",
+        text: "Oil made from medium-chain triglycerides, usually from coconut or palm kernel oil. Alongside hemp seed oil, a common carrier oil for CBD extracts.",
+      },
+      {
+        term: "Monopolverwaltung",
+        text: "Monopolverwaltung GmbH administers Austria’s tobacco monopoly. Hemp shops can apply to it for a licence to sell hemp flowers during the transition period until the end of 2028.",
+      },
+      {
+        term: "Novel food",
+        text: "Food that was not consumed to a significant degree in the EU before 15 May 1997. CBD extracts are considered novel food and may not be sold as food without authorisation.",
+      },
+      {
+        term: "Terpenes",
+        text: "Aroma compounds that give plants such as hemp, citrus fruit or lavender their typical scent, for example myrcene, limonene or linalool. More: [Terpenes explained](/en/guide/terpenes/).",
+      },
+      {
+        term: "THC (tetrahydrocannabinol)",
+        text: "The intoxicating cannabinoid of the hemp plant. In Austria, hemp products may contain no more than 0.3% THC.",
+      },
+      {
+        term: "Tobacco monopoly",
+        text: "In Austria, the trade in tobacco products is regulated by the state. Since 2025 smokable hemp flowers fall under it too — they may not be shipped and may only be sold to persons aged 18 and over. Background: [Is CBD legal in Austria?](/en/guide/is-cbd-legal-in-austria/)",
+      },
+      {
+        term: "Trichomes",
+        text: "Fine resin glands on the flowers and leaves of the hemp plant, where cannabinoids and terpenes are formed.",
+      },
+    ],
+  },
+  wishlist: {
+    slug: "wishlist",
+    label: "Wishlist",
+    eyebrow: "Your selection",
+    title: "Wishlist",
+    meta: {
+      title: "Wishlist | Cannaplace 1080 CBD Shop Vienna",
+      description:
+        "Your saved products at Cannaplace 1080: compare CBD oils, cosmetics and accessories, order later or see them in our store at Josefstädter Straße 56 in Vienna.",
+    },
+    lead: "All the products you marked with the heart — to compare, order or see in store.",
+    emptyTitle: "Your wishlist is still empty",
+    emptyText: "Tap the heart on a product to save it here.",
+    emptyCta: "Discover products",
+    clear: "Clear wishlist",
+    note: "Your wishlist is saved in this browser only — no account, no cookies.",
   },
   pages: {
     lab: {
@@ -756,27 +937,36 @@ export const en: Dict = {
       body: [
         {
           type: "note",
-          text: "Placeholder: the details in square brackets must be completed by the shop before launch.",
+          text: "To be confirmed before launch: company name and register data come from the public Austrian company register. The shop completes the details in square brackets.",
         },
         {
           type: "table",
           rows: [
-            ["Company", "[Company name or name of the owner]"],
+            ["Company", "CANNAPLACE OG"],
+            ["Legal form", "General partnership (Offene Gesellschaft, OG)"],
             ["Trading name", "Cannaplace 1080 CBD Shop"],
+            ["Registered seat", "Vienna"],
             ["Address", "Josefstädter Straße 56, 1080 Vienna, Austria"],
             ["Phone", "+43 676 7731571"],
             ["Email", "[email address]"],
+            ["Company register number", "FN 619212g"],
+            ["Register court", "Commercial Court of Vienna (Handelsgericht Wien)"],
             ["VAT ID", "[ATU…]"],
-            ["Company register", "[register number and court, if registered]"],
             ["Business purpose", "Retail of hemp and CBD products and accessories"],
-            ["Trade authority", "[competent trade authority]"],
+            ["Trade authority", "[competent municipal district office]"],
             ["Chamber", "Vienna Chamber of Commerce (Wirtschaftskammer Wien)"],
+            ["Applicable regulations", "Austrian Trade Regulation Act (Gewerbeordnung), available in the [Federal Legal Information System](https://www.ris.bka.gv.at)"],
           ],
         },
         { type: "h2", text: "Disclosure according to § 25 Media Act" },
         {
           type: "p",
-          text: "Media owner: [company name or name]. Editorial line: information about the range and services of Cannaplace 1080 and general information about CBD.",
+          text: "Media owner: CANNAPLACE OG, Josefstädter Straße 56, 1080 Vienna. Editorial line: information about the range and services of Cannaplace 1080 and general information about CBD.",
+        },
+        { type: "h2", text: "Website & search engine optimisation" },
+        {
+          type: "p",
+          text: "Concept, development and SEO: [Getflowly](https://getflowly.at)",
         },
         { type: "h2", text: "Liability for content" },
         {
@@ -804,7 +994,7 @@ export const en: Dict = {
         { type: "h2", text: "Controller" },
         {
           type: "p",
-          text: "[Company name or name], Josefstädter Straße 56, 1080 Vienna, phone +43 676 7731571, email: [email address].",
+          text: "CANNAPLACE OG, Josefstädter Straße 56, 1080 Vienna, phone +43 676 7731571, email: [email address].",
         },
         { type: "h2", text: "No tracking cookies" },
         {
@@ -814,7 +1004,7 @@ export const en: Dict = {
         { type: "h2", text: "Local storage in your browser" },
         {
           type: "p",
-          text: "So that you don’t have to confirm the age check on every visit, we store your confirmation locally in your browser (local storage). The same applies to the font variant chosen in the preview. This information never leaves your device and can be deleted at any time in your browser settings.",
+          text: "So that you don’t have to confirm the age check on every visit, we store your confirmation locally in your browser (local storage). The same applies to your wishlist and the font variant chosen in the preview. This information never leaves your device and can be deleted at any time in your browser settings.",
         },
         { type: "h2", text: "Hosting and server log files" },
         {
@@ -824,7 +1014,7 @@ export const en: Dict = {
         { type: "h2", text: "External links" },
         {
           type: "p",
-          text: "Links to Google Maps and Instagram open the services of the respective providers. Data is only transferred to these providers when you click; their privacy policies apply.",
+          text: "Links to Google Maps, our Google reviews and Instagram open the services of the respective providers. Data is only transferred to these providers when you click; their privacy policies apply.",
         },
         { type: "h2", text: "Your rights" },
         {
